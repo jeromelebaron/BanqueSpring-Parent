@@ -1,0 +1,1689 @@
+09:37:39,340  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@36c0b403: startup date [Sun Mar 20 09:37:39 CET 2016]; root of context hierarchy
+09:37:39,437  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:37:40,854  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:37:40,865  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:37:40,871  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:37:40,873  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:37:40,911  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:37:40,980  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:37:41,061  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:37:41,330  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+09:37:41,360  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:37:41,374  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:37:41,511  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:37:41,738  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:37:41,747  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:37:42,251  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:37:42,273  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:37:42,276 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2023)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.sql.SQLException: No suitable driver
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2014)
+	... 61 more
+09:37:42,280 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2023)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.sql.SQLException: No suitable driver
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2014)
+	... 61 more
+09:37:42,464  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@1fb7482a] of Hibernate SessionFactory for HibernateTransactionManager
+09:37:42,574 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:37:42,576  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:37:42,576 ERROR SqlExceptionHelper:146 - Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+09:37:42,595  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@456964ea: startup date [Sun Mar 20 09:37:42 CET 2016]; root of context hierarchy
+09:37:42,597  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:37:42,881  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:37:42,884  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:37:42,887  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:37:42,899  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+09:37:42,900  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:37:42,900  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:37:42,901  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:37:42,919  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:37:42,919  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:37:43,010  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:37:43,017  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:37:43,022 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2023)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.sql.SQLException: No suitable driver
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2014)
+	... 61 more
+09:37:43,024 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2023)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.sql.SQLException: No suitable driver
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2014)
+	... 61 more
+09:37:43,055  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@46a7a4cc] of Hibernate SessionFactory for HibernateTransactionManager
+09:37:43,116  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:37:43,117 ERROR SqlExceptionHelper:146 - Cannot create JDBC driver of class 'com.mysql.jdbc.Driver' for connect URL 'classpath:/db.properties/db.url'
+09:40:14,959  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@36c0b403: startup date [Sun Mar 20 09:40:14 CET 2016]; root of context hierarchy
+09:40:15,030  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:40:15,483  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5d66bddc: startup date [Sun Mar 20 09:40:15 CET 2016]; root of context hierarchy
+09:40:15,486  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:41:45,713  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 09:41:45 CET 2016]; root of context hierarchy
+09:41:45,778  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:41:46,033  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d371b2d: startup date [Sun Mar 20 09:41:46 CET 2016]; root of context hierarchy
+09:41:46,035  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:42:25,372  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 09:42:25 CET 2016]; root of context hierarchy
+09:42:25,515  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:42:26,507  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:42:26,520  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:42:26,524  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:42:26,527  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:42:26,583  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:42:26,627  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:42:26,685  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:42:27,413  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:42:27,684  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:42:27,859  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:42:27,873  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:42:28,344  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:42:28,345  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:42:28,362  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:42:28,364  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:42:28,370  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:42:28,371  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:42:28,378  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:42:28,378  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+09:42:28,386  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:42:28,386  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+09:42:28,394  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:42:28,394  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+09:42:28,524  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+09:42:28,645 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:42:28,827  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 09:42:28 CET 2016]; root of context hierarchy
+09:42:28,836  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:42:28,933  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:42:28,939  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:42:28,971  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:42:29,010  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:42:29,014  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:42:29,026  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:42:29,027  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:42:29,071  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:42:29,071  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:42:29,083  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:42:29,085  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:42:29,093  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:42:29,094  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:42:29,102  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:42:29,103  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+09:42:29,107  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:42:29,108  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+09:42:29,112  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:42:29,114  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+09:42:29,124  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+09:42:29,360 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+09:43:42,627  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6bbee61a: startup date [Sun Mar 20 09:43:42 CET 2016]; root of context hierarchy
+09:43:42,696  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:43:43,846  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:43:43,854  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:43:43,856  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:43:43,858  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:43:43,888  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:43:43,941  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:43:44,053  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:43:44,957  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:43:45,181  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:43:45,411  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:43:45,418  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:43:46,064  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:43:46,064  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:43:46,098  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:43:46,138  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:43:46,143  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:43:46,144  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:43:46,149  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:43:46,150  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:43:46,156  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:43:46,157  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:43:46,163  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:43:46,163  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:43:46,398  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@145db24a] of Hibernate SessionFactory for HibernateTransactionManager
+09:43:46,503 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:43:46,632  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7b6d18f2: startup date [Sun Mar 20 09:43:46 CET 2016]; root of context hierarchy
+09:43:46,634  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:43:46,935  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:43:46,938  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:43:46,941  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:43:47,039  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:43:47,056  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:43:47,113  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:43:47,114  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:43:47,217  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:43:47,217  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:43:47,222  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:43:47,222  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:43:47,227  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:43:47,227  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:43:47,233  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:43:47,233  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:43:47,239  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:43:47,240  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:43:47,247  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:43:47,247  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:43:47,313  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@6b6cd4a3] of Hibernate SessionFactory for HibernateTransactionManager
+09:43:47,570 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+09:45:21,760  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 09:45:21 CET 2016]; root of context hierarchy
+09:45:21,814  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:45:22,632  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:45:22,640  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:45:22,643  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:45:22,646  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:45:22,668  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:45:22,715  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:45:22,783  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:45:23,274  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+09:45:23,282  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:45:23,294  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:45:23,381  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:45:23,586  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:45:23,595  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:45:24,114  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:45:24,116  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:45:24,120 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:45:24,132 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:45:24,273  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@61d9efe0] of Hibernate SessionFactory for HibernateTransactionManager
+09:45:24,362 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:45:24,366  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:45:24,366 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+09:45:24,400  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3e587920: startup date [Sun Mar 20 09:45:24 CET 2016]; root of context hierarchy
+09:45:24,402  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:45:24,557  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:45:24,561  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:45:24,564  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:45:24,576  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+09:45:24,576  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:45:24,577  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:45:24,578  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:45:24,592  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:45:24,593  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:45:24,642  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:45:24,643  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:45:24,646 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:45:24,650 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:45:24,659  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@7561db12] of Hibernate SessionFactory for HibernateTransactionManager
+09:45:24,692  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:45:24,693 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+09:46:07,663  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 09:46:07 CET 2016]; root of context hierarchy
+09:46:07,872  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:46:09,215  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:46:09,231  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:46:09,236  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:46:09,240  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:46:09,447  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:46:09,490  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:46:09,580  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:46:10,725  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:46:10,926  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:46:11,116  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:46:11,121  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:46:11,528  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:46:11,528  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:46:11,543  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:46:11,545  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:11,551  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:46:11,552  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:11,558  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:46:11,558  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+09:46:11,563  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:46:11,563  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+09:46:11,568  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:46:11,568  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+09:46:11,676  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+09:46:11,766 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:46:11,891  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 09:46:11 CET 2016]; root of context hierarchy
+09:46:11,895  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:46:12,044  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:46:12,052  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:46:12,056  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:46:12,092  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:46:12,096  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:46:12,113  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:46:12,114  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:46:12,161  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:46:12,164  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:46:12,170  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:46:12,170  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:12,180  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:46:12,181  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:12,186  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:46:12,188  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+09:46:12,194  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:46:12,198  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+09:46:12,208  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:46:12,208  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+09:46:12,217  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+09:46:12,402 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+09:46:47,516  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2bbacc03: startup date [Sun Mar 20 09:46:47 CET 2016]; root of context hierarchy
+09:46:47,626  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:46:48,567  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:46:48,575  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:46:48,580  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:46:48,583  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:46:48,608  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:46:48,642  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:46:48,685  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:46:49,325  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:46:49,426  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:46:49,587  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:46:49,598  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:46:50,042  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:46:50,042  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:46:50,057  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:46:50,059  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:50,083  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:46:50,084  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:50,089  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:46:50,089  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:46:50,095  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:46:50,095  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:46:50,101  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:46:50,102  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:46:50,254  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@1c8fae9c] of Hibernate SessionFactory for HibernateTransactionManager
+09:46:50,348 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:46:50,457  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@30e556bc: startup date [Sun Mar 20 09:46:50 CET 2016]; root of context hierarchy
+09:46:50,460  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:46:50,639  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:46:50,642  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:46:50,645  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:46:50,735  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:46:50,737  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:46:50,767  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:46:50,768  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:46:50,824  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:46:50,825  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:46:50,830  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:46:50,830  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:50,834  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:46:50,835  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:46:50,840  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:46:50,841  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:46:50,848  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:46:50,849  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:46:50,863  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:46:50,863  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:46:50,887  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@44627e3e] of Hibernate SessionFactory for HibernateTransactionManager
+09:46:51,226 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+09:48:12,935  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 09:48:12 CET 2016]; root of context hierarchy
+09:48:13,035  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:48:13,766  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:48:13,774  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:48:13,777  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:48:13,779  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:48:13,819  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:48:13,855  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:48:13,913  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:48:14,577  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:48:14,758  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:48:14,932  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:48:14,937  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:48:15,330  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:48:15,332  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:48:15,347  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:48:15,349  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:48:15,353  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:48:15,354  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:48:15,358  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:48:15,359  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+09:48:15,377  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:48:15,379  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+09:48:15,391  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:48:15,393  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+09:48:15,530  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+09:48:15,624 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:48:15,741  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 09:48:15 CET 2016]; root of context hierarchy
+09:48:15,745  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:48:15,902  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:48:15,907  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:48:15,911  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:48:15,963  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:48:15,966  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:48:15,981  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:48:15,981  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:48:16,053  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:48:16,055  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:48:16,059  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:48:16,060  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:48:16,066  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:48:16,067  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:48:16,072  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:48:16,073  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+09:48:16,077  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:48:16,081  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+09:48:16,087  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:48:16,105  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+09:48:16,121  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+09:48:16,301 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+16:37:31,716  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 16:37:31 CET 2016]; root of context hierarchy
+16:37:31,784  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:37:32,673  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+16:37:32,687  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+16:37:32,692  INFO Environment:239 - HHH000206: hibernate.properties not found
+16:37:32,695  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+16:37:32,728  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:37:32,765  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:37:32,802  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:37:33,536  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:37:33,763  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:37:33,963  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:37:33,973  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:37:34,391  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:37:34,392  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:37:34,409  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:37:34,416  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:34,423  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:37:34,423  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:34,428  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:37:34,429  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:37:34,434  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:37:34,437  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:37:34,441  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:37:34,444  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:37:34,587  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+16:37:34,680 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+16:37:34,843  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 16:37:34 CET 2016]; root of context hierarchy
+16:37:34,845  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:37:34,979  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:37:34,985  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:37:34,989  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:37:35,026  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:37:35,030  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:37:35,065  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:37:35,065  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:37:35,113  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:37:35,114  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:37:35,123  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:37:35,125  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:35,132  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:37:35,133  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:35,138  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:37:35,139  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:37:35,143  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:37:35,144  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:37:35,155  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:37:35,156  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:37:35,167  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+16:37:35,437 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+16:37:52,478  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6bbee61a: startup date [Sun Mar 20 16:37:52 CET 2016]; root of context hierarchy
+16:37:52,548  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:37:53,538  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+16:37:53,547  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+16:37:53,552  INFO Environment:239 - HHH000206: hibernate.properties not found
+16:37:53,554  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+16:37:53,582  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:37:53,624  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:37:53,669  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:37:54,357  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:37:54,502  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:37:54,649  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:37:54,655  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:37:55,138  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:37:55,139  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:37:55,167  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:37:55,190  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:55,197  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:37:55,197  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:55,203  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:37:55,204  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+16:37:55,211  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:37:55,212  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+16:37:55,218  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:37:55,218  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+16:37:55,396  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@132367fa] of Hibernate SessionFactory for HibernateTransactionManager
+16:37:55,504 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+16:37:55,612  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5e7dac7d: startup date [Sun Mar 20 16:37:55 CET 2016]; root of context hierarchy
+16:37:55,614  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:37:55,872  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:37:55,875  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:37:55,886  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:37:55,962  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:37:55,965  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:37:55,994  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:37:55,998  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:37:56,078  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:37:56,078  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:37:56,083  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:37:56,084  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:56,087  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:37:56,088  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:37:56,094  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:37:56,094  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+16:37:56,119  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:37:56,120  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+16:37:56,129  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:37:56,129  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+16:37:56,180  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@48048172] of Hibernate SessionFactory for HibernateTransactionManager
+16:37:56,896 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+16:39:17,828  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 16:39:17 CET 2016]; root of context hierarchy
+16:39:17,896  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:39:18,671  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+16:39:18,678  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+16:39:18,680  INFO Environment:239 - HHH000206: hibernate.properties not found
+16:39:18,682  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+16:39:18,704  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:39:18,780  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:39:18,853  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:39:19,557  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:39:19,746  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:39:19,884  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:39:19,889  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:39:20,328  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:39:20,329  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:39:20,350  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:39:20,365  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:39:20,372  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:39:20,379  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:39:20,389  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:39:20,396  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:39:20,401  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:39:20,405  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:39:20,410  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:39:20,411  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:39:20,529  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+16:39:20,656 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+16:39:20,766  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 16:39:20 CET 2016]; root of context hierarchy
+16:39:20,770  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:39:20,891  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:39:20,894  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:39:20,915  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:39:20,940  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:39:20,942  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:39:20,959  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:39:20,961  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:39:21,025  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:39:21,029  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:39:21,046  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:39:21,049  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:39:21,057  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:39:21,057  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:39:21,062  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:39:21,063  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:39:21,066  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:39:21,072  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:39:21,078  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:39:21,082  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:39:21,096  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+16:39:21,317 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+16:40:59,730  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 16:40:59 CET 2016]; root of context hierarchy
+16:40:59,785  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:41:00,565  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+16:41:00,572  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+16:41:00,574  INFO Environment:239 - HHH000206: hibernate.properties not found
+16:41:00,577  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+16:41:00,601  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:41:00,666  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:41:00,701  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:41:01,353  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:41:01,553  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:41:01,698  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:41:01,705  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:41:02,181  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:41:02,181  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:41:02,196  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:41:02,198  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:41:02,202  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:41:02,204  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:41:02,209  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:41:02,209  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:41:02,213  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:41:02,215  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:41:02,219  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:41:02,219  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:41:02,380  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+16:41:02,456 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+16:41:02,592  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 16:41:02 CET 2016]; root of context hierarchy
+16:41:02,597  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:41:02,833  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:41:02,837  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:41:02,841  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:41:02,906  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:41:02,909  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:41:02,920  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:41:02,923  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:41:02,972  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:41:02,975  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:41:02,981  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:41:02,984  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:41:02,994  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:41:02,995  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:41:02,998  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:41:02,999  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:41:03,003  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:41:03,004  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:41:03,013  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:41:03,015  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:41:03,032  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+16:41:03,279 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+16:41:44,414  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 16:41:44 CET 2016]; root of context hierarchy
+16:41:44,471  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:41:45,368  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+16:41:45,375  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+16:41:45,377  INFO Environment:239 - HHH000206: hibernate.properties not found
+16:41:45,379  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+16:41:45,400  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:41:45,440  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:41:45,472  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:41:46,009  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+16:41:46,018  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:41:46,028  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+16:41:46,137  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:41:46,324  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:41:46,335  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:41:46,797  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:41:46,798  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:41:46,803 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+16:41:46,809 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+16:41:46,981  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@61d9efe0] of Hibernate SessionFactory for HibernateTransactionManager
+16:41:47,123 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+16:41:47,151  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+16:41:47,152 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+16:41:47,170  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3e587920: startup date [Sun Mar 20 16:41:47 CET 2016]; root of context hierarchy
+16:41:47,171  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:41:47,314  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:41:47,317  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:41:47,320  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:41:47,331  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+16:41:47,331  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:41:47,332  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+16:41:47,340  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:41:47,350  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:41:47,350  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:41:47,393  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:41:47,394  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:41:47,399 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+16:41:47,403 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4226)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4158)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2508)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2541)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2323)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:408)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at org.apache.commons.dbcp2.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:39)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:205)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2162)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+16:41:47,415  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@7561db12] of Hibernate SessionFactory for HibernateTransactionManager
+16:41:47,427  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+16:41:47,427 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (Access denied for user 'root'@'localhost' (using password: NO))
+16:43:09,434  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 16:43:09 CET 2016]; root of context hierarchy
+16:43:09,485  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:43:10,217  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+16:43:10,224  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+16:43:10,226  INFO Environment:239 - HHH000206: hibernate.properties not found
+16:43:10,229  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+16:43:10,250  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:43:10,292  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:43:10,326  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:43:10,991  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:43:11,184  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:43:11,338  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:43:11,359  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:43:11,744  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:43:11,744  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:43:11,760  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:43:11,763  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:43:11,767  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:43:11,768  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:43:11,771  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:43:11,773  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:43:11,777  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:43:11,777  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:43:11,781  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:43:11,781  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:43:11,918  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+16:43:11,993 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+16:43:12,174  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 16:43:12 CET 2016]; root of context hierarchy
+16:43:12,181  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+16:43:12,354  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+16:43:12,356  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+16:43:12,359  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+16:43:12,390  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:43:12,393  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+16:43:12,405  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+16:43:12,423  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+16:43:12,469  INFO SchemaValidator:157 - HHH000229: Running schema validator
+16:43:12,471  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+16:43:12,477  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+16:43:12,478  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:43:12,485  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+16:43:12,486  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+16:43:12,494  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+16:43:12,494  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+16:43:12,500  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+16:43:12,501  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+16:43:12,517  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+16:43:12,520  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+16:43:12,533  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+16:43:12,780 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+20:04:24,921  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5034c75a: startup date [Sun Mar 20 20:04:24 CET 2016]; root of context hierarchy
+20:04:24,974  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+20:04:25,770  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+20:04:25,777  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+20:04:25,780  INFO Environment:239 - HHH000206: hibernate.properties not found
+20:04:25,784  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+20:04:25,812  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/.jenkins/workspace/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+20:04:25,843  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+20:04:25,907  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+20:04:26,617  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+20:04:26,808  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+20:04:26,922  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+20:04:26,927  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+20:04:27,312  INFO SchemaValidator:157 - HHH000229: Running schema validator
+20:04:27,312  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+20:04:27,330  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+20:04:27,331  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+20:04:27,337  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+20:04:27,338  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+20:04:27,344  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+20:04:27,345  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+20:04:27,349  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+20:04:27,349  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+20:04:27,355  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+20:04:27,356  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+20:04:27,457  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5bd73d1a] of Hibernate SessionFactory for HibernateTransactionManager
+20:04:27,539 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+20:04:27,673  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@20921b9b: startup date [Sun Mar 20 20:04:27 CET 2016]; root of context hierarchy
+20:04:27,678  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+20:04:27,820  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/.jenkins/workspace/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+20:04:27,822  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+20:04:27,828  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+20:04:27,858  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+20:04:27,861  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+20:04:27,872  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+20:04:27,872  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+20:04:27,931  INFO SchemaValidator:157 - HHH000229: Running schema validator
+20:04:27,932  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+20:04:27,936  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+20:04:27,936  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+20:04:27,944  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+20:04:27,945  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+20:04:27,949  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+20:04:27,951  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+20:04:27,955  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+20:04:27,963  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+20:04:27,967  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+20:04:27,972  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+20:04:27,983  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@705202d1] of Hibernate SessionFactory for HibernateTransactionManager
+20:04:28,151 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?

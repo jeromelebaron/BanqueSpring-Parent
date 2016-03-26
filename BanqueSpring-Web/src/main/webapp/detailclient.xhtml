@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title></title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+</h:head>
+<h:body>
+	<div class="container">
+		<h:form>
+			<div class="row">
+				Choisissez votre compte :
+				<h:selectOneMenu value="#{managedBeanInfosClient.numeroCompte}">
+					<f:selectItems value="#{managedBeanInfosClient.lesCompte}"
+						var="compte" itemValue="#{compte.numeroCompte}"
+						itemLabel="#{compte.numeroCompte}">
+					</f:selectItems>
+				</h:selectOneMenu>
+				<h:commandButton
+					action="#{managedBeanInfosClient.afficherLesOperations(numeroCOmpte)}"
+					value="Afficher les opérations" />
+			</div>
+			<h:panelGroup rendered="#{managedBeanInfosClient.numeroCompte != 0}">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Débit</th>
+							<th>Crédit</th>
+						</tr>
+					</thead>
+					<tbody>
+						<ui:repeat var="operation"
+							value="#{managedBeanInfosClient.lesOperationDuCompte}">
+							<tr>
+								<td><h:outputText value="#{operation.dateOperation}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText></td>
+								<td><h:outputText
+										value="#{managedBeanInfosClient.test(operation, 'debit')}" /></td>
+								<td><h:outputText
+										value="#{managedBeanInfosClient.test(operation, 'credit')}" /></td>
+							</tr>
+						</ui:repeat>
+					</tbody>
+				</table>
+			</h:panelGroup>
+		</h:form>
+	</div>
+</h:body>
+</html>

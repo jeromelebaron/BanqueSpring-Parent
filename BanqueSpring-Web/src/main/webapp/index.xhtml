@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title></title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+</h:head>
+<h:body>
+	<div class="container">
+		<h:form>
+			<h:panelGroup
+				rendered="#{managedBeanConnexionUtilisateur.utilisateurConnecte == null}">
+				<div class="row">
+					<label>Mail : </label>
+					<h:inputText value="#{managedBeanConnexionUtilisateur.mail}" />
+				</div>
+				<div class="row">
+					<label>Mot de passe : </label>
+					<h:inputText value="#{managedBeanConnexionUtilisateur.motDePasse}" />
+				</div>
+				<div class="row">
+					<h:commandButton
+						action="#{managedBeanConnexionUtilisateur.connexion()}"
+						value="Connexion" />
+				</div>
+				<h:panelGroup
+					rendered="#{managedBeanConnexionUtilisateur.message != null}">
+					<div class="row">
+						<h:outputLabel value="#{managedBeanConnexionUtilisateur.message}" />
+					</div>
+				</h:panelGroup>
+			</h:panelGroup>
+			<h:panelGroup
+				rendered="#{managedBeanConnexionUtilisateur.utilisateurConnecte != null}">
+				<div class="row">
+					<h:commandButton
+						action="#{managedBeanConnexionUtilisateur.deconnexion()}"
+						value="Déconnexion" />
+				</div>
+			</h:panelGroup>
+		</h:form>
+	</div>
+</h:body>
+</html>

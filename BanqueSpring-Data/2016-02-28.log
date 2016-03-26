@@ -1,0 +1,302 @@
+09:27:52,181  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@26f3bbad: startup date [Sun Feb 28 09:27:52 CET 2016]; root of context hierarchy
+09:27:52,261  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:27:53,248  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:27:53,255  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:27:53,257  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:27:53,259  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:27:53,285  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:27:53,319  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:27:53,395  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:27:54,000  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:27:54,108  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:27:54,278  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:27:54,284  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:27:54,657  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:27:54,657  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:27:54,675  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:27:54,677  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:27:54,682  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:27:54,689  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:27:54,696  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:27:54,696  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:27:54,726  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:27:54,726  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:27:54,745  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:27:54,745  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:27:54,921  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@7b5e8a9e] of Hibernate SessionFactory for HibernateTransactionManager
+09:27:55,066 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:27:55,107 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:27:55,112 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:27:55,114 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:27:55,116 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:27:55,117 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:27:55,118 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:27:55,120 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:27:55,124 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+09:27:55,127 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+09:27:55,128 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+09:27:55,130 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+09:27:55,132 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,144 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,146 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,148 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,150 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,152 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,153 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,155 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,157 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,158 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:27:55,160 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,163 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,166 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,168 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,169 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,171 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,173 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,174 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,176 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,177 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,179 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,181 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,182 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,184 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,186 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,187 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,189 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,190 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,192 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,194 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,195 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,197 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,198 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,200 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,201 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,203 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,204 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,206 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,208 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,209 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,211 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,213 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,214 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,216 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,218 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,219 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,221 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,222 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,237 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,241 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,243 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,244 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,246 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,248 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,249 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,251 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,252 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,254 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,255 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,257 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,258 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,260 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,261 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,263 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,264 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,266 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,268 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,269 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,271 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,272 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,274 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,276 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,277 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,279 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,280 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,298 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,299 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,301 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,303 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,305 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,307 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,309 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,313 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,315 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,324 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,326 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,328 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,331 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,333 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,335 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,337 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,339 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,340 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,342 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,344 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,345 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,347 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,348 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,350 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,352 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,353 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,355 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,356 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,358 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,360 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,361 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,363 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,364 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,374 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,376 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,384 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,386 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,388 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,390 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,392 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,395 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,398 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,400 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,413 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,415 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,417 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,418 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,420 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,421 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,423 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,424 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,426 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,427 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,429 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,430 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,432 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,433 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,435 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,436 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,438 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,439 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,440 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,442 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,443 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,445 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,449 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,451 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,453 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,456 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,457 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,459 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,461 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,464 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,466 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,467 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,469 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,470 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,472 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,473 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,475 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,476 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,478 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,479 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,481 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,482 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,484 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,485 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,487 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,488 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,490 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,491 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,492 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,494 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,495 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,497 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,498 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,500 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,501 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,508 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,510 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,512 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,519 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,520 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,522 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,523 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,525 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,526 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,528 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,529 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,531 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,532 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,534 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,535 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,537 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,539 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,541 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,544 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,546 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,548 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,550 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,551 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,552 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,559 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,561 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,564 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,566 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,568 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,569 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,571 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,572 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,574 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,575 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,577 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:27:55,578 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:27:55,579 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:28:56,769  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@763c6b88: startup date [Sun Feb 28 09:28:56 CET 2016]; root of context hierarchy
+09:28:56,850  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:28:57,822  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:28:57,831  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:28:57,834  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:28:57,836  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:28:57,862  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:28:57,891  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:28:58,011  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:28:58,630  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:28:58,744  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:28:58,909  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:28:58,914  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:28:59,318  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:28:59,319  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:28:59,334  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:28:59,336  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:28:59,341  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:28:59,341  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:28:59,369  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:28:59,373  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:28:59,387  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:28:59,388  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:28:59,394  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:28:59,395  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:28:59,564  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@732c4270] of Hibernate SessionFactory for HibernateTransactionManager
+09:28:59,640 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:29:32,747  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@90580fa: startup date [Sun Feb 28 09:29:32 CET 2016]; root of context hierarchy
+09:29:32,817  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:29:33,733  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:29:33,740  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:29:33,742  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:29:33,744  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:29:33,771  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/WS-Jer-Java/maven.1454955776505/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:29:33,799  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:29:33,827  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:29:34,408  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+09:29:34,529  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:29:34,701  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:29:34,708  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:29:35,113  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:29:35,114  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:29:35,130  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+09:29:35,132  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:29:35,152  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+09:29:35,152  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:29:35,158  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+09:29:35,159  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:29:35,172  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+09:29:35,174  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:29:35,181  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+09:29:35,181  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:29:35,374  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@28978349] of Hibernate SessionFactory for HibernateTransactionManager
+09:29:35,452 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur

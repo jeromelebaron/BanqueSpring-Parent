@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>BanqueSpring-Data</artifactId>
+	<name>BanqueSpring-Data</name>
+	<parent>
+		<groupId>fr.afcepf.atod26</groupId>
+		<artifactId>BanqueSpring-Parent</artifactId>
+		<version>0.1</version>
+		<relativePath>../BanqueSpring-Parent/pom.xml</relativePath>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>fr.afcepf.atod26.java</groupId>
+			<artifactId>BanqueSpring-Entity</artifactId>
+			<version>0.1</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<filters>
+			<filter>src/main/resources/filters/filter-${env}.properties</filter>
+		</filters>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>dev</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>afcepf</id>
+			<properties>
+				<env>afcepf</env>
+			</properties>
+		</profile>
+	</profiles>
+</project>

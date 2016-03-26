@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title></title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+</h:head>
+<h:body>
+	<div class="container">
+		<h:form>
+			<div class="row">
+				<fieldset>
+					<div class="row">
+						<label>Nom : </label>
+						<h:inputText
+							value="#{managedBeanAjoutUtilisateur.nouvelUtilisateur.nom}" />
+						<label>Prénom : </label>
+						<h:inputText
+							value="#{managedBeanAjoutUtilisateur.nouvelUtilisateur.prenom}" />
+					</div>
+					<div class="row">
+						<label>Mail : </label>
+						<h:inputText
+							value="#{managedBeanAjoutUtilisateur.nouvelUtilisateur.mail}" />
+					</div>
+					<div class="row">
+						<label>Mot de passe : </label>
+						<h:inputText
+							value="#{managedBeanAjoutUtilisateur.nouvelUtilisateur.motDePasse}" />
+						<label>Prénom : </label>
+						<h:commandButton
+							action="#{managedBeanAjoutUtilisateur.ajouterUtilisateur()}"
+							value="Ajouter" />
+					</div>
+				</fieldset>
+			</div>
+			<div class="row">
+				<fieldset>
+					<legend>Clients</legend>
+					<div class="col-md-4">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Nom</th>
+									<th>Prénom</th>
+									<th>Détail</th>
+								</tr>
+							</thead>
+							<tbody>
+								<ui:repeat var="client"
+									value="#{managedBeanConseiller.lesClient}">
+									<tr>
+										<td><h:outputText value="#{client.nom}" /></td>
+										<td><h:outputText value="#{client.prenom}" /></td>
+										<td><h:commandLink value="Détail"
+												action="#{managedBeanConseiller.detailsClient(client.idUtilisateur)}" />
+										</td>
+									</tr>
+								</ui:repeat>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-8">
+						<div class="row">
+							<label>Compte n° </label>
+							<h:selectOneMenu value="#{managedBeanConseiller.numeroCompte}">
+								<f:selectItems
+									value="#{managedBeanConseiller.lesCompteDuClient}" var="compte"
+									itemValue="#{compte.numeroCompte}"
+									itemLabel="#{compte.numeroCompte}">
+								</f:selectItems>
+							</h:selectOneMenu>
+							<h:commandButton
+								action="#{managedBeanConseiller.voirLesOperation()}"
+								value="Afficher les opérations" />
+						</div>
+						<div class="row">
+							<h:panelGroup
+								rendered="#{managedBeanConseiller.numeroCompte != 0}">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Date</th>
+											<th>Débit</th>
+											<th>Crédit</th>
+										</tr>
+									</thead>
+									<tbody>
+										<ui:repeat var="operation"
+											value="#{managedBeanConseiller.lesOperationDuCompte}">
+											<tr>
+												<td><h:outputText value="#{operation.dateOperation}">
+														<f:convertDateTime pattern="dd/MM/yyyy" />
+													</h:outputText></td>
+												<td><h:outputText
+														value="#{managedBeanConseiller.test(operation, 'debit')}" /></td>
+												<td><h:outputText
+														value="#{managedBeanConseiller.test(operation, 'credit')}" /></td>
+											</tr>
+										</ui:repeat>
+									</tbody>
+								</table>
+							</h:panelGroup>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>
