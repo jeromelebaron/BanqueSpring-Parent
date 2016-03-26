@@ -15,74 +15,74 @@ import fr.afcepf.atod26.java.spring.banque.entity.Utilisateur;
 @SessionScoped
 public class ManagedBeanConnexionUtilisateur {
 
-	private Logger log = Logger.getLogger(getClass());
-	
-	private String				mail;
+    private Logger             log = Logger.getLogger(getClass());
 
-	private String				motDePasse;
+    private String             mail;
 
-	private Utilisateur			utilisateurConnecte;
+    private String             motDePasse;
 
-	private String				message;
+    private Utilisateur        utilisateurConnecte;
 
-	@ManagedProperty(value = "#{businessConnexion}")
-	private IBusinessConnexion	businessConnexion;
+    private String             message;
 
-	public String connexion() {
-		String redirection = "";
-		try {
-			utilisateurConnecte = businessConnexion.connexionUtilisateur(mail, motDePasse);
-			if (utilisateurConnecte.getClass() == Client.class) {
-				redirection = "detailclient.jsf?faces-redirect=true";
-			} else if (utilisateurConnecte.getClass() == Conseiller.class) {
-				redirection = "detailconseiller.jsf?faces-redirect=true";
-			}
-		} catch (Exception e) {
-			log.debug(e);
-			message = "Login ou mot de passe erroné";
-		}
-		return redirection;
-	}
+    @ManagedProperty(value = "#{businessConnexion}")
+    private IBusinessConnexion businessConnexion;
 
-	public String deconnexion() {
-		utilisateurConnecte = null;
-		return "";
-	}
+    public String connexion() {
+        String redirection = "";
+        try {
+            utilisateurConnecte = businessConnexion.connexionUtilisateur(mail, motDePasse);
+            if (utilisateurConnecte.getClass() == Client.class) {
+                redirection = "detailclient.jsf?faces-redirect=true";
+            } else if (utilisateurConnecte.getClass() == Conseiller.class) {
+                redirection = "detailconseiller.jsf?faces-redirect=true";
+            }
+        } catch (Exception e) {
+            log.debug(e);
+            message = "Login ou mot de passe erroné";
+        }
+        return redirection;
+    }
 
-	public String getMail() {
-		return mail;
-	}
+    public String deconnexion() {
+        utilisateurConnecte = null;
+        return "";
+    }
 
-	public void setMail(String paramMail) {
-		mail = paramMail;
-	}
+    public String getMail() {
+        return mail;
+    }
 
-	public String getMotDePasse() {
-		return motDePasse;
-	}
+    public void setMail(String paramMail) {
+        mail = paramMail;
+    }
 
-	public void setMotDePasse(String paramMotDePasse) {
-		motDePasse = paramMotDePasse;
-	}
+    public String getMotDePasse() {
+        return motDePasse;
+    }
 
-	public Utilisateur getUtilisateurConnecte() {
-		return utilisateurConnecte;
-	}
+    public void setMotDePasse(String paramMotDePasse) {
+        motDePasse = paramMotDePasse;
+    }
 
-	public void setUtilisateurConnecte(Utilisateur paramUtilisateurConnecte) {
-		utilisateurConnecte = paramUtilisateurConnecte;
-	}
+    public Utilisateur getUtilisateurConnecte() {
+        return utilisateurConnecte;
+    }
 
-	public String getMessage() {
-		return message;
-	}
+    public void setUtilisateurConnecte(Utilisateur paramUtilisateurConnecte) {
+        utilisateurConnecte = paramUtilisateurConnecte;
+    }
 
-	public void setMessage(String paramMessage) {
-		message = paramMessage;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setBusinessConnexion(IBusinessConnexion paramBusinessConnexion) {
-		businessConnexion = paramBusinessConnexion;
-	}
+    public void setMessage(String paramMessage) {
+        message = paramMessage;
+    }
+
+    public void setBusinessConnexion(IBusinessConnexion paramBusinessConnexion) {
+        businessConnexion = paramBusinessConnexion;
+    }
 
 }

@@ -19,75 +19,75 @@ import fr.afcepf.atod26.java.spring.banque.entity.Utilisateur;
 @SessionScoped
 public class ManagedBeanInfosClient {
 
-	private List<Compte>			lesCompte;
+    private List<Compte>          lesCompte;
 
-	@ManagedProperty(value = "#{businessClient}")
-	private IBusinessClient			businessClient;
+    @ManagedProperty(value = "#{businessClient}")
+    private IBusinessClient       businessClient;
 
-	@ManagedProperty(value = "#{managedBeanConnexionUtilisateur.utilisateurConnecte}")
-	private Utilisateur				utilisateur;
+    @ManagedProperty(value = "#{managedBeanConnexionUtilisateur.utilisateurConnecte}")
+    private Utilisateur           utilisateur;
 
-	private int						numeroCompte;
+    private int                   numeroCompte;
 
-	private List<OperationCompte>	lesOperationDuCompte;
+    private List<OperationCompte> lesOperationDuCompte;
 
-	@PostConstruct
-	public void init() {
-		Client client = (Client) utilisateur;
-		lesCompte = businessClient.getCompteByClient(client);
-	}
+    @PostConstruct
+    public void init() {
+        Client client = (Client) utilisateur;
+        lesCompte = businessClient.getCompteByClient(client);
+    }
 
-	public String afficherLesOperations(int paramNumeroCompte) {
-		Compte compteSelectionne = null;
-		for (Compte compte : lesCompte) {
-			if (compte.getNumeroCompte() == numeroCompte) {
-				compteSelectionne = compte;
-			}
-		}
-		lesOperationDuCompte = businessClient.getOperationByCompte(compteSelectionne);
-		return "";
-	}
+    public String afficherLesOperations(int paramNumeroCompte) {
+        Compte compteSelectionne = null;
+        for (Compte compte : lesCompte) {
+            if (compte.getNumeroCompte() == numeroCompte) {
+                compteSelectionne = compte;
+            }
+        }
+        lesOperationDuCompte = businessClient.getOperationByCompte(compteSelectionne);
+        return "";
+    }
 
-	public String test(OperationCompte op , String type) {
-		switch(type) {
-		case "debit":
-			return op.getClass() == Debit.class ? op.getMontant() + "" : "";
-		case "credit":
-			return op.getClass() == Credit.class ? op.getMontant() + "" : "";
-		}
-		return "";
-	}
-	
-	public void setBusinessClient(IBusinessClient paramBusinessClient) {
-		businessClient = paramBusinessClient;
-	}
+    public String test(OperationCompte op, String type) {
+        switch (type) {
+        case "debit":
+            return op.getClass() == Debit.class ? op.getMontant() + "" : "";
+        case "credit":
+            return op.getClass() == Credit.class ? op.getMontant() + "" : "";
+        }
+        return "";
+    }
 
-	public void setUtilisateur(Utilisateur paramUtilisateur) {
-		utilisateur = paramUtilisateur;
-	}
+    public void setBusinessClient(IBusinessClient paramBusinessClient) {
+        businessClient = paramBusinessClient;
+    }
 
-	public List<Compte> getLesCompte() {
-		return lesCompte;
-	}
+    public void setUtilisateur(Utilisateur paramUtilisateur) {
+        utilisateur = paramUtilisateur;
+    }
 
-	public void setLesCompte(List<Compte> paramLesCompte) {
-		lesCompte = paramLesCompte;
-	}
+    public List<Compte> getLesCompte() {
+        return lesCompte;
+    }
 
-	public int getNumeroCompte() {
-		return numeroCompte;
-	}
+    public void setLesCompte(List<Compte> paramLesCompte) {
+        lesCompte = paramLesCompte;
+    }
 
-	public void setNumeroCompte(int paramNumeroCompte) {
-		numeroCompte = paramNumeroCompte;
-	}
+    public int getNumeroCompte() {
+        return numeroCompte;
+    }
 
-	public List<OperationCompte> getLesOperationDuCompte() {
-		return lesOperationDuCompte;
-	}
+    public void setNumeroCompte(int paramNumeroCompte) {
+        numeroCompte = paramNumeroCompte;
+    }
 
-	public void setLesOperationDuCompte(List<OperationCompte> paramLesOperationDuCompte) {
-		lesOperationDuCompte = paramLesOperationDuCompte;
-	}
+    public List<OperationCompte> getLesOperationDuCompte() {
+        return lesOperationDuCompte;
+    }
+
+    public void setLesOperationDuCompte(List<OperationCompte> paramLesOperationDuCompte) {
+        lesOperationDuCompte = paramLesOperationDuCompte;
+    }
 
 }

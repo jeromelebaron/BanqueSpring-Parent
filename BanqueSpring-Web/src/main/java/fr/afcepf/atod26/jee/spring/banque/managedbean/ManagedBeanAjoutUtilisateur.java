@@ -12,26 +12,26 @@ import fr.afcepf.atod26.java.spring.banque.entity.Utilisateur;
 @RequestScoped
 public class ManagedBeanAjoutUtilisateur {
 
-	private Utilisateur			nouvelUtilisateur	= new Utilisateur();
+    private Utilisateur         nouvelUtilisateur = new Utilisateur();
 
-	@ManagedProperty(value = "#{businessConseiller}")
-	private IBusinessConseiller	businessConseiller;
+    @ManagedProperty(value = "#{businessConseiller}")
+    private IBusinessConseiller businessConseiller;
 
-	public String ajouterUtilisateur() {
-		businessConseiller.insertClient((Client) nouvelUtilisateur);
-		return "";
-	}
+    public String ajouterUtilisateur() {
+        businessConseiller.insertClient((Client) nouvelUtilisateur);
+        return "";
+    }
 
-	public Utilisateur getNouvelUtilisateur() {
-		return nouvelUtilisateur;
-	}
+    public Utilisateur getNouvelUtilisateur() {
+        return nouvelUtilisateur;
+    }
 
-	public void setNouvelUtilisateur(Utilisateur paramNouvelUtilisateur) {
-		nouvelUtilisateur = paramNouvelUtilisateur;
-	}
+    public void setNouvelUtilisateur(Utilisateur paramNouvelUtilisateur) {
+        nouvelUtilisateur = paramNouvelUtilisateur;
+    }
 
-	public void setBusinessConseiller(IBusinessConseiller paramBusinessConseiller) {
-		businessConseiller = paramBusinessConseiller;
-	}
+    public void setBusinessConseiller(IBusinessConseiller paramBusinessConseiller) {
+        businessConseiller = paramBusinessConseiller;
+    }
 
 }

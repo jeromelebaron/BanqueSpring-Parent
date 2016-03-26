@@ -19,89 +19,89 @@ import fr.afcepf.atod26.java.spring.banque.entity.OperationCompte;
 @SessionScoped
 public class ManagedBeanConseiller {
 
-	private List<Client>			lesClient;
+    private List<Client>          lesClient;
 
-	@ManagedProperty(value = "#{businessConseiller}")
-	private IBusinessConseiller		businessConseiller;
+    @ManagedProperty(value = "#{businessConseiller}")
+    private IBusinessConseiller   businessConseiller;
 
-	@ManagedProperty(value = "#{businessClient}")
-	private IBusinessClient			businessClient;
+    @ManagedProperty(value = "#{businessClient}")
+    private IBusinessClient       businessClient;
 
-	private List<Compte>			lesCompteDuClient;
+    private List<Compte>          lesCompteDuClient;
 
-	private int						numeroCompte;
+    private int                   numeroCompte;
 
-	private List<OperationCompte>	lesOperationDuCompte;
+    private List<OperationCompte> lesOperationDuCompte;
 
-	@PostConstruct
-	public void init() {
-		lesClient = businessConseiller.getAllClient();
-	}
+    @PostConstruct
+    public void init() {
+        lesClient = businessConseiller.getAllClient();
+    }
 
-	public String detailsClient(int paramIdUtilisateur) {
-		lesCompteDuClient = businessConseiller.getCompteByIdClient(paramIdUtilisateur);
-		return "";
-	}
+    public String detailsClient(int paramIdUtilisateur) {
+        lesCompteDuClient = businessConseiller.getCompteByIdClient(paramIdUtilisateur);
+        return "";
+    }
 
-	public String voirLesOperation() {
-		Compte compte = null;
-		for (Compte localCompte : lesCompteDuClient) {
-			if (localCompte.getNumeroCompte() == numeroCompte) {
-				compte = localCompte;
-			}
-		}
-		lesOperationDuCompte = businessClient.getOperationByCompte(compte);
-		return "";
-	}
+    public String voirLesOperation() {
+        Compte compte = null;
+        for (Compte localCompte : lesCompteDuClient) {
+            if (localCompte.getNumeroCompte() == numeroCompte) {
+                compte = localCompte;
+            }
+        }
+        lesOperationDuCompte = businessClient.getOperationByCompte(compte);
+        return "";
+    }
 
-	public String test(OperationCompte op, String type) {
-		switch (type) {
-		case "debit":
-			return op.getClass() == Debit.class ? op.getMontant() + "" : "";
-		case "credit":
-			return op.getClass() == Credit.class ? op.getMontant() + "" : "";
-		}
-		return "";
-	}
+    public String test(OperationCompte op, String type) {
+        switch (type) {
+        case "debit":
+            return op.getClass() == Debit.class ? op.getMontant() + "" : "";
+        case "credit":
+            return op.getClass() == Credit.class ? op.getMontant() + "" : "";
+        }
+        return "";
+    }
 
-	public List<Client> getLesClient() {
-		return lesClient;
-	}
+    public List<Client> getLesClient() {
+        return lesClient;
+    }
 
-	public void setLesClient(List<Client> paramLesClient) {
-		lesClient = paramLesClient;
-	}
+    public void setLesClient(List<Client> paramLesClient) {
+        lesClient = paramLesClient;
+    }
 
-	public void setBusinessConseiller(IBusinessConseiller paramBusinessConseiller) {
-		businessConseiller = paramBusinessConseiller;
-	}
+    public void setBusinessConseiller(IBusinessConseiller paramBusinessConseiller) {
+        businessConseiller = paramBusinessConseiller;
+    }
 
-	public void setBusinessClient(IBusinessClient paramBusinessClient) {
-		businessClient = paramBusinessClient;
-	}
+    public void setBusinessClient(IBusinessClient paramBusinessClient) {
+        businessClient = paramBusinessClient;
+    }
 
-	public List<Compte> getLesCompteDuClient() {
-		return lesCompteDuClient;
-	}
+    public List<Compte> getLesCompteDuClient() {
+        return lesCompteDuClient;
+    }
 
-	public void setLesCompteDuClient(List<Compte> paramLesCompteDuClient) {
-		lesCompteDuClient = paramLesCompteDuClient;
-	}
+    public void setLesCompteDuClient(List<Compte> paramLesCompteDuClient) {
+        lesCompteDuClient = paramLesCompteDuClient;
+    }
 
-	public int getNumeroCompte() {
-		return numeroCompte;
-	}
+    public int getNumeroCompte() {
+        return numeroCompte;
+    }
 
-	public void setNumeroCompte(int paramNumeroCompte) {
-		numeroCompte = paramNumeroCompte;
-	}
+    public void setNumeroCompte(int paramNumeroCompte) {
+        numeroCompte = paramNumeroCompte;
+    }
 
-	public List<OperationCompte> getLesOperationDuCompte() {
-		return lesOperationDuCompte;
-	}
+    public List<OperationCompte> getLesOperationDuCompte() {
+        return lesOperationDuCompte;
+    }
 
-	public void setLesOperationDuCompte(List<OperationCompte> paramLesOperationDuCompte) {
-		lesOperationDuCompte = paramLesOperationDuCompte;
-	}
+    public void setLesOperationDuCompte(List<OperationCompte> paramLesOperationDuCompte) {
+        lesOperationDuCompte = paramLesOperationDuCompte;
+    }
 
 }

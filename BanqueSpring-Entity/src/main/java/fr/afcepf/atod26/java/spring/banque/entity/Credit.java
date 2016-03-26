@@ -9,35 +9,32 @@ import javax.persistence.Entity;
 @DiscriminatorValue(value = "credit")
 public class Credit extends OperationCompte {
 
-	/**
-	 * Constructeur vide.
-	 */
-	public Credit() {
-		super();
-	}
+    /**
+     * Constructeur vide.
+     */
+    public Credit() {
+        super();
+    }
 
-	/**
-	 * Constructeur sans numéro d'opération.
-	 * 
-	 * @param paramCompte
-	 * @param paramMontant
-	 * @param paramDateOperation
-	 */
-	public Credit(final Compte paramCompte, final Double paramMontant, final Date paramDateOperation) {
-		super(paramCompte, paramMontant, paramDateOperation);
-	}
+    /**
+     * Constructeur sans numéro d'opération.
+     * @param paramCompte
+     * @param paramMontant
+     * @param paramDateOperation
+     */
+    public Credit(final Compte paramCompte, final Double paramMontant, final Date paramDateOperation) {
+        super(paramCompte, paramMontant, paramDateOperation);
+    }
 
-	/**
-	 * Constructeur plein.
-	 * 
-	 * @param paramCompte
-	 * @param paramNumeroOperation
-	 * @param paramMontant
-	 * @param paramDateOperation
-	 */
-	public Credit(final Compte paramCompte, final Integer paramNumeroOperation, final Double paramMontant,
-			final Date paramDateOperation) {
-		super(paramCompte, paramNumeroOperation, paramMontant, paramDateOperation);
-	}
+    /**
+     * Constructeur plein.
+     * @param paramCompte
+     * @param paramNumeroOperation
+     * @param paramMontant
+     * @param paramDateOperation
+     */
+    public Credit(final Compte paramCompte, final Integer paramNumeroOperation, final Double paramMontant, final Date paramDateOperation) {
+        super(paramCompte, paramNumeroOperation, paramMontant, paramDateOperation);
+    }
 
 }
