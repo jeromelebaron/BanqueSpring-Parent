@@ -37,7 +37,7 @@ public class ManagedBeanInfosClient {
         lesCompte = businessClient.getCompteByClient(client);
     }
 
-    public String afficherLesOperations(int paramNumeroCompte) {
+    public String afficherLesOperations() {
         Compte compteSelectionne = null;
         for (Compte compte : lesCompte) {
             if (compte.getNumeroCompte() == numeroCompte) {
@@ -49,10 +49,10 @@ public class ManagedBeanInfosClient {
     }
 
     public String test(OperationCompte op, String type) {
-        if(type.equals("debit")){
+        if ("debit".equals(type)) {
             return op.getClass() == Debit.class ? op.getMontant() + "" : "";
         }
-        if(type.equals("credit")){
+        if ("credit".equals(type)) {
             return op.getClass() == Credit.class ? op.getMontant() + "" : "";
         }
         return "";

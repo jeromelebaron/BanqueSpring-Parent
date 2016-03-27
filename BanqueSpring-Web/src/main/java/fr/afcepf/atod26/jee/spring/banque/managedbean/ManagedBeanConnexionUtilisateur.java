@@ -15,18 +15,18 @@ import fr.afcepf.atod26.java.spring.banque.entity.Utilisateur;
 @SessionScoped
 public class ManagedBeanConnexionUtilisateur {
 
-    private Logger             log = Logger.getLogger(getClass());
+    private static final Logger LOG = Logger.getLogger(ManagedBeanConnexionUtilisateur.class);
 
-    private String             mail;
+    private String              mail;
 
-    private String             motDePasse;
+    private String              motDePasse;
 
-    private Utilisateur        utilisateurConnecte;
+    private Utilisateur         utilisateurConnecte;
 
-    private String             message;
+    private String              message;
 
     @ManagedProperty(value = "#{businessConnexion}")
-    private IBusinessConnexion businessConnexion;
+    private IBusinessConnexion  businessConnexion;
 
     public String connexion() {
         String redirection = "";
@@ -38,7 +38,7 @@ public class ManagedBeanConnexionUtilisateur {
                 redirection = "detailconseiller.jsf?faces-redirect=true";
             }
         } catch (Exception e) {
-            log.debug(e);
+            LOG.debug(e);
             message = "Login ou mot de passe erroné";
         }
         return redirection;

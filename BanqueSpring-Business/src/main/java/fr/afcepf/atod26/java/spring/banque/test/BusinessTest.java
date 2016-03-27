@@ -13,6 +13,12 @@ public class BusinessTest {
 
     private static final Logger LOG = Logger.getLogger(BusinessTest.class);
 
+    /**
+     * 
+     */
+    private BusinessTest() {
+    }
+
     public static void main(final String[] args) {
 
         final BeanFactory bf = new ClassPathXmlApplicationContext("classpath:spring-business.xml");
@@ -23,12 +29,6 @@ public class BusinessTest {
             LOG.info(localClient);
         }
 
-    }
-
-    /**
-     * 
-     */
-    private BusinessTest() {
     }
 
 }

@@ -55,10 +55,10 @@ public class ManagedBeanConseiller {
     }
 
     public String test(OperationCompte op, String type) {
-        if (type.equals("debit")){
+        if ("debit".equals(type)){
             return op.getClass() == Debit.class ? op.getMontant() + "" : "";
         }
-        if (type.equals("credit")){
+        if ("credit".equals(type)){
             return op.getClass() == Credit.class ? op.getMontant() + "" : "";
         }
         return "";
