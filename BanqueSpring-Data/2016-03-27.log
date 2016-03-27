@@ -98,3 +98,153 @@
 15:20:29,704  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
 15:20:29,732  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@408a247c] of Hibernate SessionFactory for HibernateTransactionManager
 15:20:29,969 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:29:14,904  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4520ebad: startup date [Sun Mar 27 15:29:14 CEST 2016]; root of context hierarchy
+15:29:15,030  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:29:15,844  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:29:15,853  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:29:15,856  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:29:15,859  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:29:15,918  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:29:15,951  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:29:16,029  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:29:16,744  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:29:16,942  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:29:17,259  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:29:17,267  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:29:17,772  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:29:17,772  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:29:17,797  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:29:17,799  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:29:17,805  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:29:17,806  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:29:17,820  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:29:17,821  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:29:17,828  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:29:17,831  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:29:17,844  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:29:17,847  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:29:18,288  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@173b9122] of Hibernate SessionFactory for HibernateTransactionManager
+15:29:18,402 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:29:18,543  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@456abb66: startup date [Sun Mar 27 15:29:18 CEST 2016]; root of context hierarchy
+15:29:18,564  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:29:18,697  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:29:18,701  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:29:18,705  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:29:18,735  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:29:18,737  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:29:18,751  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:29:18,754  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:29:18,803  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:29:18,805  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:29:18,810  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:29:18,813  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:29:18,817  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:29:18,820  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:29:18,826  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:29:18,828  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:29:18,832  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:29:18,833  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:29:18,843  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:29:18,847  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:29:18,864  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@408a247c] of Hibernate SessionFactory for HibernateTransactionManager
+15:29:19,054 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:31:59,906  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4520ebad: startup date [Sun Mar 27 15:31:59 CEST 2016]; root of context hierarchy
+15:31:59,962  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:32:00,754  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:32:00,767  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:32:00,769  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:32:00,772  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:32:00,800  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:32:00,862  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:32:00,929  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:32:01,667  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:32:01,889  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:32:02,082  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:32:02,123  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:32:02,496  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:32:02,497  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:32:02,522  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:32:02,524  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:02,540  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:32:02,548  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:02,573  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:32:02,577  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:32:02,582  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:32:02,583  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:32:02,588  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:32:02,589  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:32:02,782  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@173b9122] of Hibernate SessionFactory for HibernateTransactionManager
+15:32:02,867 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:32:03,160  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@456abb66: startup date [Sun Mar 27 15:32:03 CEST 2016]; root of context hierarchy
+15:32:03,162  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:32:03,386  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:32:03,389  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:32:03,393  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:32:03,473  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:32:03,476  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:32:03,488  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:32:03,489  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:32:03,575  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:32:03,576  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:32:03,580  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:32:03,582  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:03,592  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:32:03,593  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:03,598  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:32:03,604  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:32:03,621  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:32:03,641  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:32:03,661  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:32:03,695  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:32:03,710  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@408a247c] of Hibernate SessionFactory for HibernateTransactionManager
+15:32:03,996 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:32:47,200  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4520ebad: startup date [Sun Mar 27 15:32:47 CEST 2016]; root of context hierarchy
+15:32:47,276  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:32:48,025  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:32:48,031  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:32:48,034  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:32:48,036  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:32:48,056  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:32:48,114  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:32:48,149  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:32:48,835  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:32:49,057  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:32:49,182  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:32:49,189  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:32:49,594  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:32:49,595  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:32:49,611  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:32:49,613  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:49,617  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:32:49,618  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:49,625  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:32:49,626  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:32:49,631  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:32:49,631  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:32:49,636  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:32:49,636  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:32:49,744  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@173b9122] of Hibernate SessionFactory for HibernateTransactionManager
+15:32:49,841 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:32:49,968  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@456abb66: startup date [Sun Mar 27 15:32:49 CEST 2016]; root of context hierarchy
+15:32:49,989  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:32:50,124  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:32:50,127  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:32:50,130  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:32:50,161  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:32:50,173  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:32:50,199  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:32:50,201  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:32:50,277  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:32:50,278  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:32:50,281  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:32:50,282  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:50,285  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:32:50,286  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:32:50,295  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:32:50,296  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:32:50,302  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:32:50,304  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:32:50,308  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:32:50,309  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:32:50,323  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@408a247c] of Hibernate SessionFactory for HibernateTransactionManager
+15:32:50,527 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
