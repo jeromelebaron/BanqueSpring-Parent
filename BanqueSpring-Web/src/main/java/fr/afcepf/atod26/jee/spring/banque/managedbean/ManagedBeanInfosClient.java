@@ -49,10 +49,10 @@ public class ManagedBeanInfosClient {
     }
 
     public String test(OperationCompte op, String type) {
-        switch (type) {
-        case "debit":
+        if(type.equals("debit")){
             return op.getClass() == Debit.class ? op.getMontant() + "" : "";
-        case "credit":
+        }
+        if(type.equals("credit")){
             return op.getClass() == Credit.class ? op.getMontant() + "" : "";
         }
         return "";

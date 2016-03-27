@@ -11,7 +11,7 @@ import fr.afcepf.atod26.java.spring.banque.entity.Client;
 
 public class BusinessTest {
 
-    private final static Logger LOG = Logger.getLogger(BusinessTest.class);
+    private static final Logger LOG = Logger.getLogger(BusinessTest.class);
 
     public static void main(final String[] args) {
 
@@ -24,4 +24,11 @@ public class BusinessTest {
         }
 
     }
+
+    /**
+     * 
+     */
+    private BusinessTest() {
+    }
+
 }
