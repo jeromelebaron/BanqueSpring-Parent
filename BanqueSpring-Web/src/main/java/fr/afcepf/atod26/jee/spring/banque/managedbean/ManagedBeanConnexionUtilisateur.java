@@ -12,7 +12,7 @@ import fr.afcepf.atod26.java.spring.banque.entity.Conseiller;
 import fr.afcepf.atod26.java.spring.banque.entity.Utilisateur;
 import fr.afcepf.atod26.java.spring.banque.exception.BanqueException;
 
-@ManagedBean(name="managedBeanConnexionUtilisateur")
+@ManagedBean(name = "managedBeanConnexionUtilisateur")
 @SessionScoped
 public class ManagedBeanConnexionUtilisateur {
 
