@@ -13,22 +13,20 @@ import fr.afcepf.atod26.java.spring.banque.exception.BanqueException;
 @Service(value = "businessConnexion")
 public class BusinessConnexion implements IBusinessConnexion {
 
-	private IDaoUtilisateur daoUtilisateur;
+    private IDaoUtilisateur daoUtilisateur;
 
-	@Autowired
-	public void setDaoUtilisateur(final IDaoUtilisateur paramDaoUtilisateur) {
-		daoUtilisateur = paramDaoUtilisateur;
-	}
+    @Autowired
+    public void setDaoUtilisateur(final IDaoUtilisateur paramDaoUtilisateur) {
+        daoUtilisateur = paramDaoUtilisateur;
+    }
 
-	@Override
-	public Utilisateur connexionUtilisateur(final String paramMail, final String paramMotDePasse)
-			throws BanqueException {
-		final List<Utilisateur> lesUtilisateur = daoUtilisateur.connexionUtilisateur(paramMail, paramMotDePasse);
-		if (lesUtilisateur.size() == 1) {
-			return lesUtilisateur.get(0);
-		} else {
-			throw new BanqueException(
-					"Problème lors de la connexion, plus d'un utilisateur avec ces identifiants/mot de passe");
-		}
-	}
+    @Override
+    public Utilisateur connexionUtilisateur(final String paramMail, final String paramMotDePasse) throws BanqueException {
+        final List<Utilisateur> lesUtilisateur = daoUtilisateur.connexionUtilisateur(paramMail, paramMotDePasse);
+        if (lesUtilisateur.size() == 1) {
+            return lesUtilisateur.get(0);
+        } else {
+            throw new BanqueException("Problème lors de la connexion, plus d'un utilisateur avec ces identifiants/mot de passe");
+        }
+    }
 }

@@ -5,5 +5,5 @@ import fr.afcepf.atod26.java.spring.banque.exception.BanqueException;
 
 public interface IBusinessConnexion {
 
-	Utilisateur connexionUtilisateur(String paramMail, String paramMotDePasse) throws BanqueException;
+    Utilisateur connexionUtilisateur(String paramMail, String paramMotDePasse) throws BanqueException;
 }

@@ -48,3 +48,1007 @@
 12:22:36,154  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
 12:22:36,170  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@408a247c] of Hibernate SessionFactory for HibernateTransactionManager
 12:22:36,395 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+14:55:33,532  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f13f599: startup date [Mon Mar 28 14:55:33 CEST 2016]; root of context hierarchy
+14:55:33,621  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+14:55:34,897  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+14:55:34,908  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+14:55:34,916  INFO Environment:239 - HHH000206: hibernate.properties not found
+14:55:34,920  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+14:55:34,986  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+14:55:35,038  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:55:35,152  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+14:55:36,005  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:55:36,165  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+14:55:36,338  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:55:36,360  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:55:36,901  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+14:55:36,904 DEBUG SQL:109 - alter table Client drop foreign key FK_tmsskjhmh47g1dfd33o3msmgg
+14:55:36,928 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table Client drop foreign key FK_tmsskjhmh47g1dfd33o3msmgg
+14:55:36,930 ERROR SchemaExport:427 - Table 'bdd_banque.client' doesn't exist
+14:55:36,930 DEBUG SQL:109 - alter table Conseiller drop foreign key FK_1g42pjxn7l6j09l5xg8vto3be
+14:55:36,931 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table Conseiller drop foreign key FK_1g42pjxn7l6j09l5xg8vto3be
+14:55:36,931 ERROR SchemaExport:427 - Table 'bdd_banque.conseiller' doesn't exist
+14:55:36,932 DEBUG SQL:109 - alter table compte drop foreign key FK_20a8vu6mk97d7bty54i0lsjr
+14:55:36,932 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table compte drop foreign key FK_20a8vu6mk97d7bty54i0lsjr
+14:55:36,933 ERROR SchemaExport:427 - Table 'bdd_banque.compte' doesn't exist
+14:55:36,933 DEBUG SQL:109 - alter table operation_compte drop foreign key FK_pd5x0grc9ny57rpfirwka107m
+14:55:36,936 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table operation_compte drop foreign key FK_pd5x0grc9ny57rpfirwka107m
+14:55:36,936 ERROR SchemaExport:427 - Table 'bdd_banque.operation_compte' doesn't exist
+14:55:36,937 DEBUG SQL:109 - drop table if exists Client
+14:55:36,950 DEBUG SQL:109 - drop table if exists Conseiller
+14:55:36,951 DEBUG SQL:109 - drop table if exists compte
+14:55:36,952 DEBUG SQL:109 - drop table if exists operation_compte
+14:55:36,968 DEBUG SQL:109 - drop table if exists utilisateur
+14:55:36,969 DEBUG SQL:109 - create table Client (id_utilisateur integer not null, primary key (id_utilisateur))
+14:55:36,989 DEBUG SQL:109 - create table Conseiller (id_utilisateur integer not null, primary key (id_utilisateur))
+14:55:37,001 DEBUG SQL:109 - create table compte (numero_compte integer not null auto_increment, date_de_creation datetime not null, type_de_compte varchar(45) not null, id_utilisateur integer, primary key (numero_compte))
+14:55:37,022 DEBUG SQL:109 - create table operation_compte (type_operation varchar(31) not null, numero_operation integer not null auto_increment, date_operation datetime not null, montant double precision not null, lesOperation integer not null, primary key (numero_operation))
+14:55:37,041 DEBUG SQL:109 - create table utilisateur (type_utilisateur varchar(31) not null, id_utilisateur integer not null auto_increment, mail varchar(45) not null, mot_de_passe varchar(45) not null, nom varchar(45) not null, prenom varchar(45) not null, primary key (id_utilisateur))
+14:55:37,058 DEBUG SQL:109 - alter table Client add constraint FK_tmsskjhmh47g1dfd33o3msmgg foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+14:55:37,079 DEBUG SQL:109 - alter table Conseiller add constraint FK_1g42pjxn7l6j09l5xg8vto3be foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+14:55:37,098 DEBUG SQL:109 - alter table compte add constraint FK_20a8vu6mk97d7bty54i0lsjr foreign key (id_utilisateur) references Client (id_utilisateur)
+14:55:37,117 DEBUG SQL:109 - alter table operation_compte add constraint FK_pd5x0grc9ny57rpfirwka107m foreign key (lesOperation) references compte (numero_compte)
+14:55:37,146 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `Client` VALUES (1),(2),(3),(4)
+14:55:37,146 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`client`, CONSTRAINT `FK_tmsskjhmh47g1dfd33o3msmgg` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`))
+14:55:37,149 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `Conseiller` VALUES (5),(6)
+14:55:37,149 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`conseiller`, CONSTRAINT `FK_1g42pjxn7l6j09l5xg8vto3be` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`))
+14:55:37,153 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `compte` VALUES (1,'2016-03-19 19:05:44','Courant',1),(2,'2016-03-19 19:05:44','Courant',1),(3,'2016-03-19 19:05:44','Courant',2),(4,'2016-03-19 19:05:44','Courant',2),(5,'2016-03-19 19:05:44','Courant',2),(6,'2016-03-19 19:05:44','Courant',3),(7,'2016-03-19 19:05:44','Courant',4),(8,'2016-03-19 19:05:44','Courant',4),(9,'2016-03-19 19:05:44','Courant',4),(10,'2016-03-19 19:05:44','Courant',4)
+14:55:37,153 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`compte`, CONSTRAINT `FK_20a8vu6mk97d7bty54i0lsjr` FOREIGN KEY (`id_utilisateur`) REFERENCES `Client` (`id_utilisateur`))
+14:55:37,200 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `operation_compte` VALUES ('debit',1,'2016-03-19 19:05:44',1252.1,1),('credit',2,'2016-03-19 19:05:44',430.4,1),('debit',3,'2016-03-19 19:05:44',837.8,1),('credit',4,'2016-03-19 19:05:44',161.6,1),('debit',5,'2016-03-19 19:05:44',1350.5,1),('credit',6,'2016-03-19 19:05:44',430.3,1),('debit',7,'2016-03-19 19:05:44',1111.7,1),('credit',8,'2016-03-19 19:05:44',703.7,1),('debit',9,'2016-03-19 19:05:44',571.2,1),('credit',10,'2016-03-19 19:05:44',439.2,1),('debit',11,'2016-03-19 19:05:44',313.6,1),('credit',12,'2016-03-19 19:05:44',174,1),('debit',13,'2016-03-19 19:05:44',19.8,1),('credit',14,'2016-03-19 19:05:44',1063.1,1),('debit',15,'2016-03-19 19:05:44',836.9,1),('credit',16,'2016-03-19 19:05:44',1459.7,1),('debit',17,'2016-03-19 19:05:44',1314.2,1),('credit',18,'2016-03-19 19:05:44',357,1),('debit',19,'2016-03-19 19:05:44',779.1,1),('credit',20,'2016-03-19 19:05:44',519.3,1),('debit',21,'2016-03-19 19:05:44',1475,2),('credit',22,'2016-03-19 19:05:44',1470.6,2),('debit',23,'2016-03-19 19:05:44',1190.1,2),('credit',24,'2016-03-19 19:05:44',703.5,2),('debit',25,'2016-03-19 19:05:44',1112.2,2),('credit',26,'2016-03-19 19:05:44',850.7,2),('debit',27,'2016-03-19 19:05:44',654.4,2),('credit',28,'2016-03-19 19:05:44',711.9,2),('debit',29,'2016-03-19 19:05:44',571.7,2),('credit',30,'2016-03-19 19:05:44',68.5,2),('debit',31,'2016-03-19 19:05:44',1395.8,2),('credit',32,'2016-03-19 19:05:44',1278.9,2),('debit',33,'2016-03-19 19:05:44',1052.6,2),('credit',34,'2016-03-19 19:05:44',651.8,2),('debit',35,'2016-03-19 19:05:44',1223.4,2),('credit',36,'2016-03-19 19:05:44',1210.5,2),('debit',37,'2016-03-19 19:05:44',1485.8,2),('credit',38,'2016-03-19 19:05:44',921.9,2),('debit',39,'2016-03-19 19:05:44',434.2,2),('credit',40,'2016-03-19 19:05:44',469.6,2),('debit',41,'2016-03-19 19:05:44',1159.1,3),('credit',42,'2016-03-19 19:05:44',742.5,3),('debit',43,'2016-03-19 19:05:44',757.9,3),('credit',44,'2016-03-19 19:05:44',129.8,3),('debit',45,'2016-03-19 19:05:44',192,3),('credit',46,'2016-03-19 19:05:44',300.3,3),('debit',47,'2016-03-19 19:05:44',572.1,3),('credit',48,'2016-03-19 19:05:44',187.8,3),('debit',49,'2016-03-19 19:05:44',1007,3),('credit',50,'2016-03-19 19:05:44',538.5,3),('debit',51,'2016-03-19 19:05:44',929.2,3),('credit',52,'2016-03-19 19:05:44',1439.3,3),('debit',53,'2016-03-19 19:05:44',1401.4,3),('credit',54,'2016-03-19 19:05:44',669.9,3),('debit',55,'2016-03-19 19:05:44',424.2,3),('credit',56,'2016-03-19 19:05:44',387.8,3),('debit',57,'2016-03-19 19:05:44',1214.7,3),('credit',58,'2016-03-19 19:05:44',793.5,3),('debit',59,'2016-03-19 19:05:44',1087.4,3),('credit',60,'2016-03-19 19:05:44',1466.8,3),('debit',61,'2016-03-19 19:05:44',1385.5,4),('credit',62,'2016-03-19 19:05:44',1034.9,4),('debit',63,'2016-03-19 19:05:44',1317.3,4),('credit',64,'2016-03-19 19:05:44',1208.3,4),('debit',65,'2016-03-19 19:05:44',426.5,4),('credit',66,'2016-03-19 19:05:44',1324.7,4),('debit',67,'2016-03-19 19:05:44',1371.2,4),('credit',68,'2016-03-19 19:05:44',400.9,4),('debit',69,'2016-03-19 19:05:44',490.7,4),('credit',70,'2016-03-19 19:05:44',1416,4),('debit',71,'2016-03-19 19:05:44',102.3,4),('credit',72,'2016-03-19 19:05:44',725.8,4),('debit',73,'2016-03-19 19:05:44',777.3,4),('credit',74,'2016-03-19 19:05:44',34,4),('debit',75,'2016-03-19 19:05:44',1479,4),('credit',76,'2016-03-19 19:05:44',359.3,4),('debit',77,'2016-03-19 19:05:44',18.7,4),('credit',78,'2016-03-19 19:05:44',1127,4),('debit',79,'2016-03-19 19:05:44',437.9,4),('credit',80,'2016-03-19 19:05:44',1075,4),('debit',81,'2016-03-19 19:05:44',703.1,5),('credit',82,'2016-03-19 19:05:44',75.2,5),('debit',83,'2016-03-19 19:05:44',312.7,5),('credit',84,'2016-03-19 19:05:44',1468.2,5),('debit',85,'2016-03-19 19:05:44',28.4,5),('credit',86,'2016-03-19 19:05:44',887.3,5),('debit',87,'2016-03-19 19:05:44',1439.9,5),('credit',88,'2016-03-19 19:05:44',66,5),('debit',89,'2016-03-19 19:05:44',839.6,5),('credit',90,'2016-03-19 19:05:44',889.6,5),('debit',91,'2016-03-19 19:05:44',576.5,5),('credit',92,'2016-03-19 19:05:44',269.1,5),('debit',93,'2016-03-19 19:05:44',1484.2,5),('credit',94,'2016-03-19 19:05:44',1182.9,5),('debit',95,'2016-03-19 19:05:44',969.3,5),('credit',96,'2016-03-19 19:05:44',1304.8,5),('debit',97,'2016-03-19 19:05:44',1122.6,5),('credit',98,'2016-03-19 19:05:44',213.2,5),('debit',99,'2016-03-19 19:05:44',290.6,5),('credit',100,'2016-03-19 19:05:44',1148.7,5),('debit',101,'2016-03-19 19:05:44',55.9,6),('credit',102,'2016-03-19 19:05:44',161.5,6),('debit',103,'2016-03-19 19:05:44',205.4,6),('credit',104,'2016-03-19 19:05:44',1198.6,6),('debit',105,'2016-03-19 19:05:44',580.5,6),('credit',106,'2016-03-19 19:05:44',26.5,6),('debit',107,'2016-03-19 19:05:44',53.5,6),('credit',108,'2016-03-19 19:05:44',857.5,6),('debit',109,'2016-03-19 19:05:44',1245.9,6),('credit',110,'2016-03-19 19:05:44',725.3,6),('debit',111,'2016-03-19 19:05:44',1024.3,6),('credit',112,'2016-03-19 19:05:44',99.8,6),('debit',113,'2016-03-19 19:05:44',1185.2,6),('credit',114,'2016-03-19 19:05:44',799.1,6),('debit',115,'2016-03-19 19:05:44',1262.1,6),('credit',116,'2016-03-19 19:05:44',1063.4,6),('debit',117,'2016-03-19 19:05:44',1398,6),('credit',118,'2016-03-19 19:05:44',857.9,6),('debit',119,'2016-03-19 19:05:44',81.3,6),('credit',120,'2016-03-19 19:05:44',1222.5,6),('debit',121,'2016-03-19 19:05:44',1000.5,7),('credit',122,'2016-03-19 19:05:44',251.7,7),('debit',123,'2016-03-19 19:05:44',872.8,7),('credit',124,'2016-03-19 19:05:44',756.1,7),('debit',125,'2016-03-19 19:05:44',1014.6,7),('credit',126,'2016-03-19 19:05:44',97.3,7),('debit',127,'2016-03-19 19:05:44',366.4,7),('credit',128,'2016-03-19 19:05:44',334.1,7),('debit',129,'2016-03-19 19:05:44',1243.8,7),('credit',130,'2016-03-19 19:05:44',1237.1,7),('debit',131,'2016-03-19 19:05:44',663.9,7),('credit',132,'2016-03-19 19:05:44',197.2,7),('debit',133,'2016-03-19 19:05:44',185.5,7),('credit',134,'2016-03-19 19:05:44',1442.7,7),('debit',135,'2016-03-19 19:05:44',1381.1,7),('credit',136,'2016-03-19 19:05:44',1105.8,7),('debit',137,'2016-03-19 19:05:44',1250.9,7),('credit',138,'2016-03-19 19:05:44',713.5,7),('debit',139,'2016-03-19 19:05:44',1332.1,7),('credit',140,'2016-03-19 19:05:44',484.1,7),('debit',141,'2016-03-19 19:05:44',1305.3,8),('credit',142,'2016-03-19 19:05:44',356.7,8),('debit',143,'2016-03-19 19:05:44',1457.3,8),('credit',144,'2016-03-19 19:05:44',1375.5,8),('debit',145,'2016-03-19 19:05:44',710.3,8),('credit',146,'2016-03-19 19:05:44',1159.6,8),('debit',147,'2016-03-19 19:05:44',133.1,8),('credit',148,'2016-03-19 19:05:44',1170.5,8),('debit',149,'2016-03-19 19:05:44',1133.7,8),('credit',150,'2016-03-19 19:05:44',900,8),('debit',151,'2016-03-19 19:05:44',1115.1,8),('credit',152,'2016-03-19 19:05:44',955.3,8),('debit',153,'2016-03-19 19:05:44',405.3,8),('credit',154,'2016-03-19 19:05:44',657,8),('debit',155,'2016-03-19 19:05:44',648.4,8),('credit',156,'2016-03-19 19:05:44',262.3,8),('debit',157,'2016-03-19 19:05:44',1124.4,8),('credit',158,'2016-03-19 19:05:44',411.3,8),('debit',159,'2016-03-19 19:05:44',1229.9,8),('credit',160,'2016-03-19 19:05:44',989.8,8),('debit',161,'2016-03-19 19:05:44',581.1,9),('credit',162,'2016-03-19 19:05:44',739.1,9),('debit',163,'2016-03-19 19:05:44',140.6,9),('credit',164,'2016-03-19 19:05:44',1282.6,9),('debit',165,'2016-03-19 19:05:44',826.9,9),('credit',166,'2016-03-19 19:05:44',18.4,9),('debit',167,'2016-03-19 19:05:44',657.1,9),('credit',168,'2016-03-19 19:05:44',1244.4,9),('debit',169,'2016-03-19 19:05:44',925.7,9),('credit',170,'2016-03-19 19:05:44',980.5,9),('debit',171,'2016-03-19 19:05:44',1327.5,9),('credit',172,'2016-03-19 19:05:44',973,9),('debit',173,'2016-03-19 19:05:44',1038.4,9),('credit',174,'2016-03-19 19:05:44',1143.9,9),('debit',175,'2016-03-19 19:05:44',1334.5,9),('credit',176,'2016-03-19 19:05:44',580.8,9),('debit',177,'2016-03-19 19:05:44',530.5,9),('credit',178,'2016-03-19 19:05:44',677.9,9),('debit',179,'2016-03-19 19:05:44',1286.5,9),('credit',180,'2016-03-19 19:05:44',576.3,9),('debit',181,'2016-03-19 19:05:44',258.3,10),('credit',182,'2016-03-19 19:05:44',1041.8,10),('debit',183,'2016-03-19 19:05:44',759.2,10),('credit',184,'2016-03-19 19:05:44',250.7,10),('debit',185,'2016-03-19 19:05:44',1071,10),('credit',186,'2016-03-19 19:05:44',1345.7,10),('debit',187,'2016-03-19 19:05:44',572.3,10),('credit',188,'2016-03-19 19:05:44',17,10),('debit',189,'2016-03-19 19:05:44',1373.4,10),('credit',190,'2016-03-19 19:05:44',777.1,10),('debit',191,'2016-03-19 19:05:44',110.9,10),('credit',192,'2016-03-19 19:05:44',1012.4,10),('debit',193,'2016-03-19 19:05:44',322.1,10),('credit',194,'2016-03-19 19:05:44',1126.2,10),('debit',195,'2016-03-19 19:05:44',1007.2,10),('credit',196,'2016-03-19 19:05:44',674.4,10),('debit',197,'2016-03-19 19:05:44',876.4,10),('credit',198,'2016-03-19 19:05:44',436.3,10),('debit',199,'2016-03-19 19:05:44',1167.4,10),('credit',200,'2016-03-19 19:05:44',452.3,10)
+14:55:37,201 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`operation_compte`, CONSTRAINT `FK_pd5x0grc9ny57rpfirwka107m` FOREIGN KEY (`lesOperation`) REFERENCES `compte` (`numero_compte`))
+14:55:37,226  INFO SchemaExport:406 - HHH000230: Schema export complete
+14:55:37,508  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@60ce2f98] of Hibernate SessionFactory for HibernateTransactionManager
+14:55:37,636 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+14:55:37,692  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2db4a1bb: startup date [Mon Mar 28 14:55:37 CEST 2016]; root of context hierarchy
+14:55:37,695  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+14:55:38,114  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+14:55:38,117  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:55:38,122  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+14:55:38,242  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:55:38,248  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+14:55:38,276  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:55:38,277  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:55:38,393  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+14:55:38,394 DEBUG SQL:109 - alter table Client drop foreign key FK_tmsskjhmh47g1dfd33o3msmgg
+14:55:38,413 DEBUG SQL:109 - alter table Conseiller drop foreign key FK_1g42pjxn7l6j09l5xg8vto3be
+14:55:38,429 DEBUG SQL:109 - alter table compte drop foreign key FK_20a8vu6mk97d7bty54i0lsjr
+14:55:38,447 DEBUG SQL:109 - alter table operation_compte drop foreign key FK_pd5x0grc9ny57rpfirwka107m
+14:55:38,462 DEBUG SQL:109 - drop table if exists Client
+14:55:38,465 DEBUG SQL:109 - drop table if exists Conseiller
+14:55:38,468 DEBUG SQL:109 - drop table if exists compte
+14:55:38,470 DEBUG SQL:109 - drop table if exists operation_compte
+14:55:38,480 DEBUG SQL:109 - drop table if exists utilisateur
+14:55:38,485 DEBUG SQL:109 - create table Client (id_utilisateur integer not null, primary key (id_utilisateur))
+14:55:38,515 DEBUG SQL:109 - create table Conseiller (id_utilisateur integer not null, primary key (id_utilisateur))
+14:55:38,527 DEBUG SQL:109 - create table compte (numero_compte integer not null auto_increment, date_de_creation datetime not null, type_de_compte varchar(45) not null, id_utilisateur integer, primary key (numero_compte))
+14:55:38,542 DEBUG SQL:109 - create table operation_compte (type_operation varchar(31) not null, numero_operation integer not null auto_increment, date_operation datetime not null, montant double precision not null, lesOperation integer not null, primary key (numero_operation))
+14:55:38,558 DEBUG SQL:109 - create table utilisateur (type_utilisateur varchar(31) not null, id_utilisateur integer not null auto_increment, mail varchar(45) not null, mot_de_passe varchar(45) not null, nom varchar(45) not null, prenom varchar(45) not null, primary key (id_utilisateur))
+14:55:38,572 DEBUG SQL:109 - alter table Client add constraint FK_tmsskjhmh47g1dfd33o3msmgg foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+14:55:38,586 DEBUG SQL:109 - alter table Conseiller add constraint FK_1g42pjxn7l6j09l5xg8vto3be foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+14:55:38,606 DEBUG SQL:109 - alter table compte add constraint FK_20a8vu6mk97d7bty54i0lsjr foreign key (id_utilisateur) references Client (id_utilisateur)
+14:55:38,625 DEBUG SQL:109 - alter table operation_compte add constraint FK_pd5x0grc9ny57rpfirwka107m foreign key (lesOperation) references compte (numero_compte)
+14:55:38,653 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `Client` VALUES (1),(2),(3),(4)
+14:55:38,653 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`client`, CONSTRAINT `FK_tmsskjhmh47g1dfd33o3msmgg` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`))
+14:55:38,656 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `Conseiller` VALUES (5),(6)
+14:55:38,656 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`conseiller`, CONSTRAINT `FK_1g42pjxn7l6j09l5xg8vto3be` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`))
+14:55:38,666 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `compte` VALUES (1,'2016-03-19 19:05:44','Courant',1),(2,'2016-03-19 19:05:44','Courant',1),(3,'2016-03-19 19:05:44','Courant',2),(4,'2016-03-19 19:05:44','Courant',2),(5,'2016-03-19 19:05:44','Courant',2),(6,'2016-03-19 19:05:44','Courant',3),(7,'2016-03-19 19:05:44','Courant',4),(8,'2016-03-19 19:05:44','Courant',4),(9,'2016-03-19 19:05:44','Courant',4),(10,'2016-03-19 19:05:44','Courant',4)
+14:55:38,667 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`compte`, CONSTRAINT `FK_20a8vu6mk97d7bty54i0lsjr` FOREIGN KEY (`id_utilisateur`) REFERENCES `Client` (`id_utilisateur`))
+14:55:38,670 ERROR SchemaExport:457 - HHH000388: Unsuccessful: INSERT INTO `operation_compte` VALUES ('debit',1,'2016-03-19 19:05:44',1252.1,1),('credit',2,'2016-03-19 19:05:44',430.4,1),('debit',3,'2016-03-19 19:05:44',837.8,1),('credit',4,'2016-03-19 19:05:44',161.6,1),('debit',5,'2016-03-19 19:05:44',1350.5,1),('credit',6,'2016-03-19 19:05:44',430.3,1),('debit',7,'2016-03-19 19:05:44',1111.7,1),('credit',8,'2016-03-19 19:05:44',703.7,1),('debit',9,'2016-03-19 19:05:44',571.2,1),('credit',10,'2016-03-19 19:05:44',439.2,1),('debit',11,'2016-03-19 19:05:44',313.6,1),('credit',12,'2016-03-19 19:05:44',174,1),('debit',13,'2016-03-19 19:05:44',19.8,1),('credit',14,'2016-03-19 19:05:44',1063.1,1),('debit',15,'2016-03-19 19:05:44',836.9,1),('credit',16,'2016-03-19 19:05:44',1459.7,1),('debit',17,'2016-03-19 19:05:44',1314.2,1),('credit',18,'2016-03-19 19:05:44',357,1),('debit',19,'2016-03-19 19:05:44',779.1,1),('credit',20,'2016-03-19 19:05:44',519.3,1),('debit',21,'2016-03-19 19:05:44',1475,2),('credit',22,'2016-03-19 19:05:44',1470.6,2),('debit',23,'2016-03-19 19:05:44',1190.1,2),('credit',24,'2016-03-19 19:05:44',703.5,2),('debit',25,'2016-03-19 19:05:44',1112.2,2),('credit',26,'2016-03-19 19:05:44',850.7,2),('debit',27,'2016-03-19 19:05:44',654.4,2),('credit',28,'2016-03-19 19:05:44',711.9,2),('debit',29,'2016-03-19 19:05:44',571.7,2),('credit',30,'2016-03-19 19:05:44',68.5,2),('debit',31,'2016-03-19 19:05:44',1395.8,2),('credit',32,'2016-03-19 19:05:44',1278.9,2),('debit',33,'2016-03-19 19:05:44',1052.6,2),('credit',34,'2016-03-19 19:05:44',651.8,2),('debit',35,'2016-03-19 19:05:44',1223.4,2),('credit',36,'2016-03-19 19:05:44',1210.5,2),('debit',37,'2016-03-19 19:05:44',1485.8,2),('credit',38,'2016-03-19 19:05:44',921.9,2),('debit',39,'2016-03-19 19:05:44',434.2,2),('credit',40,'2016-03-19 19:05:44',469.6,2),('debit',41,'2016-03-19 19:05:44',1159.1,3),('credit',42,'2016-03-19 19:05:44',742.5,3),('debit',43,'2016-03-19 19:05:44',757.9,3),('credit',44,'2016-03-19 19:05:44',129.8,3),('debit',45,'2016-03-19 19:05:44',192,3),('credit',46,'2016-03-19 19:05:44',300.3,3),('debit',47,'2016-03-19 19:05:44',572.1,3),('credit',48,'2016-03-19 19:05:44',187.8,3),('debit',49,'2016-03-19 19:05:44',1007,3),('credit',50,'2016-03-19 19:05:44',538.5,3),('debit',51,'2016-03-19 19:05:44',929.2,3),('credit',52,'2016-03-19 19:05:44',1439.3,3),('debit',53,'2016-03-19 19:05:44',1401.4,3),('credit',54,'2016-03-19 19:05:44',669.9,3),('debit',55,'2016-03-19 19:05:44',424.2,3),('credit',56,'2016-03-19 19:05:44',387.8,3),('debit',57,'2016-03-19 19:05:44',1214.7,3),('credit',58,'2016-03-19 19:05:44',793.5,3),('debit',59,'2016-03-19 19:05:44',1087.4,3),('credit',60,'2016-03-19 19:05:44',1466.8,3),('debit',61,'2016-03-19 19:05:44',1385.5,4),('credit',62,'2016-03-19 19:05:44',1034.9,4),('debit',63,'2016-03-19 19:05:44',1317.3,4),('credit',64,'2016-03-19 19:05:44',1208.3,4),('debit',65,'2016-03-19 19:05:44',426.5,4),('credit',66,'2016-03-19 19:05:44',1324.7,4),('debit',67,'2016-03-19 19:05:44',1371.2,4),('credit',68,'2016-03-19 19:05:44',400.9,4),('debit',69,'2016-03-19 19:05:44',490.7,4),('credit',70,'2016-03-19 19:05:44',1416,4),('debit',71,'2016-03-19 19:05:44',102.3,4),('credit',72,'2016-03-19 19:05:44',725.8,4),('debit',73,'2016-03-19 19:05:44',777.3,4),('credit',74,'2016-03-19 19:05:44',34,4),('debit',75,'2016-03-19 19:05:44',1479,4),('credit',76,'2016-03-19 19:05:44',359.3,4),('debit',77,'2016-03-19 19:05:44',18.7,4),('credit',78,'2016-03-19 19:05:44',1127,4),('debit',79,'2016-03-19 19:05:44',437.9,4),('credit',80,'2016-03-19 19:05:44',1075,4),('debit',81,'2016-03-19 19:05:44',703.1,5),('credit',82,'2016-03-19 19:05:44',75.2,5),('debit',83,'2016-03-19 19:05:44',312.7,5),('credit',84,'2016-03-19 19:05:44',1468.2,5),('debit',85,'2016-03-19 19:05:44',28.4,5),('credit',86,'2016-03-19 19:05:44',887.3,5),('debit',87,'2016-03-19 19:05:44',1439.9,5),('credit',88,'2016-03-19 19:05:44',66,5),('debit',89,'2016-03-19 19:05:44',839.6,5),('credit',90,'2016-03-19 19:05:44',889.6,5),('debit',91,'2016-03-19 19:05:44',576.5,5),('credit',92,'2016-03-19 19:05:44',269.1,5),('debit',93,'2016-03-19 19:05:44',1484.2,5),('credit',94,'2016-03-19 19:05:44',1182.9,5),('debit',95,'2016-03-19 19:05:44',969.3,5),('credit',96,'2016-03-19 19:05:44',1304.8,5),('debit',97,'2016-03-19 19:05:44',1122.6,5),('credit',98,'2016-03-19 19:05:44',213.2,5),('debit',99,'2016-03-19 19:05:44',290.6,5),('credit',100,'2016-03-19 19:05:44',1148.7,5),('debit',101,'2016-03-19 19:05:44',55.9,6),('credit',102,'2016-03-19 19:05:44',161.5,6),('debit',103,'2016-03-19 19:05:44',205.4,6),('credit',104,'2016-03-19 19:05:44',1198.6,6),('debit',105,'2016-03-19 19:05:44',580.5,6),('credit',106,'2016-03-19 19:05:44',26.5,6),('debit',107,'2016-03-19 19:05:44',53.5,6),('credit',108,'2016-03-19 19:05:44',857.5,6),('debit',109,'2016-03-19 19:05:44',1245.9,6),('credit',110,'2016-03-19 19:05:44',725.3,6),('debit',111,'2016-03-19 19:05:44',1024.3,6),('credit',112,'2016-03-19 19:05:44',99.8,6),('debit',113,'2016-03-19 19:05:44',1185.2,6),('credit',114,'2016-03-19 19:05:44',799.1,6),('debit',115,'2016-03-19 19:05:44',1262.1,6),('credit',116,'2016-03-19 19:05:44',1063.4,6),('debit',117,'2016-03-19 19:05:44',1398,6),('credit',118,'2016-03-19 19:05:44',857.9,6),('debit',119,'2016-03-19 19:05:44',81.3,6),('credit',120,'2016-03-19 19:05:44',1222.5,6),('debit',121,'2016-03-19 19:05:44',1000.5,7),('credit',122,'2016-03-19 19:05:44',251.7,7),('debit',123,'2016-03-19 19:05:44',872.8,7),('credit',124,'2016-03-19 19:05:44',756.1,7),('debit',125,'2016-03-19 19:05:44',1014.6,7),('credit',126,'2016-03-19 19:05:44',97.3,7),('debit',127,'2016-03-19 19:05:44',366.4,7),('credit',128,'2016-03-19 19:05:44',334.1,7),('debit',129,'2016-03-19 19:05:44',1243.8,7),('credit',130,'2016-03-19 19:05:44',1237.1,7),('debit',131,'2016-03-19 19:05:44',663.9,7),('credit',132,'2016-03-19 19:05:44',197.2,7),('debit',133,'2016-03-19 19:05:44',185.5,7),('credit',134,'2016-03-19 19:05:44',1442.7,7),('debit',135,'2016-03-19 19:05:44',1381.1,7),('credit',136,'2016-03-19 19:05:44',1105.8,7),('debit',137,'2016-03-19 19:05:44',1250.9,7),('credit',138,'2016-03-19 19:05:44',713.5,7),('debit',139,'2016-03-19 19:05:44',1332.1,7),('credit',140,'2016-03-19 19:05:44',484.1,7),('debit',141,'2016-03-19 19:05:44',1305.3,8),('credit',142,'2016-03-19 19:05:44',356.7,8),('debit',143,'2016-03-19 19:05:44',1457.3,8),('credit',144,'2016-03-19 19:05:44',1375.5,8),('debit',145,'2016-03-19 19:05:44',710.3,8),('credit',146,'2016-03-19 19:05:44',1159.6,8),('debit',147,'2016-03-19 19:05:44',133.1,8),('credit',148,'2016-03-19 19:05:44',1170.5,8),('debit',149,'2016-03-19 19:05:44',1133.7,8),('credit',150,'2016-03-19 19:05:44',900,8),('debit',151,'2016-03-19 19:05:44',1115.1,8),('credit',152,'2016-03-19 19:05:44',955.3,8),('debit',153,'2016-03-19 19:05:44',405.3,8),('credit',154,'2016-03-19 19:05:44',657,8),('debit',155,'2016-03-19 19:05:44',648.4,8),('credit',156,'2016-03-19 19:05:44',262.3,8),('debit',157,'2016-03-19 19:05:44',1124.4,8),('credit',158,'2016-03-19 19:05:44',411.3,8),('debit',159,'2016-03-19 19:05:44',1229.9,8),('credit',160,'2016-03-19 19:05:44',989.8,8),('debit',161,'2016-03-19 19:05:44',581.1,9),('credit',162,'2016-03-19 19:05:44',739.1,9),('debit',163,'2016-03-19 19:05:44',140.6,9),('credit',164,'2016-03-19 19:05:44',1282.6,9),('debit',165,'2016-03-19 19:05:44',826.9,9),('credit',166,'2016-03-19 19:05:44',18.4,9),('debit',167,'2016-03-19 19:05:44',657.1,9),('credit',168,'2016-03-19 19:05:44',1244.4,9),('debit',169,'2016-03-19 19:05:44',925.7,9),('credit',170,'2016-03-19 19:05:44',980.5,9),('debit',171,'2016-03-19 19:05:44',1327.5,9),('credit',172,'2016-03-19 19:05:44',973,9),('debit',173,'2016-03-19 19:05:44',1038.4,9),('credit',174,'2016-03-19 19:05:44',1143.9,9),('debit',175,'2016-03-19 19:05:44',1334.5,9),('credit',176,'2016-03-19 19:05:44',580.8,9),('debit',177,'2016-03-19 19:05:44',530.5,9),('credit',178,'2016-03-19 19:05:44',677.9,9),('debit',179,'2016-03-19 19:05:44',1286.5,9),('credit',180,'2016-03-19 19:05:44',576.3,9),('debit',181,'2016-03-19 19:05:44',258.3,10),('credit',182,'2016-03-19 19:05:44',1041.8,10),('debit',183,'2016-03-19 19:05:44',759.2,10),('credit',184,'2016-03-19 19:05:44',250.7,10),('debit',185,'2016-03-19 19:05:44',1071,10),('credit',186,'2016-03-19 19:05:44',1345.7,10),('debit',187,'2016-03-19 19:05:44',572.3,10),('credit',188,'2016-03-19 19:05:44',17,10),('debit',189,'2016-03-19 19:05:44',1373.4,10),('credit',190,'2016-03-19 19:05:44',777.1,10),('debit',191,'2016-03-19 19:05:44',110.9,10),('credit',192,'2016-03-19 19:05:44',1012.4,10),('debit',193,'2016-03-19 19:05:44',322.1,10),('credit',194,'2016-03-19 19:05:44',1126.2,10),('debit',195,'2016-03-19 19:05:44',1007.2,10),('credit',196,'2016-03-19 19:05:44',674.4,10),('debit',197,'2016-03-19 19:05:44',876.4,10),('credit',198,'2016-03-19 19:05:44',436.3,10),('debit',199,'2016-03-19 19:05:44',1167.4,10),('credit',200,'2016-03-19 19:05:44',452.3,10)
+14:55:38,671 ERROR SchemaExport:458 - Cannot add or update a child row: a foreign key constraint fails (`bdd_banque`.`operation_compte`, CONSTRAINT `FK_pd5x0grc9ny57rpfirwka107m` FOREIGN KEY (`lesOperation`) REFERENCES `compte` (`numero_compte`))
+14:55:38,675  INFO SchemaExport:406 - HHH000230: Schema export complete
+14:55:38,708  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@102ccb33] of Hibernate SessionFactory for HibernateTransactionManager
+14:55:39,008 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+14:57:56,034  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@470d6c27: startup date [Mon Mar 28 14:57:56 CEST 2016]; root of context hierarchy
+14:57:56,322  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+14:57:57,480  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+14:57:57,489  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+14:57:57,491  INFO Environment:239 - HHH000206: hibernate.properties not found
+14:57:57,492  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+14:57:57,521  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+14:57:57,567  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:57:57,603  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+14:57:58,327  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:57:58,448  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+14:57:58,617  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:57:58,623  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:57:59,079  INFO SchemaValidator:157 - HHH000229: Running schema validator
+14:57:59,079  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+14:57:59,096  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+14:57:59,098  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:57:59,124  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+14:57:59,125  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:57:59,149  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+14:57:59,149  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+14:57:59,156  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+14:57:59,156  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+14:57:59,172  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+14:57:59,172  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+14:57:59,358  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@20f93185] of Hibernate SessionFactory for HibernateTransactionManager
+14:57:59,488 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+14:57:59,538 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+14:57:59,559 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+14:57:59,562 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+14:57:59,577 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+14:57:59,579 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+14:57:59,581 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+14:57:59,583 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+14:57:59,584 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+14:57:59,586 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+14:57:59,589 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+14:57:59,590 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+14:57:59,593 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,603 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,604 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,606 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,608 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,609 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,611 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,613 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,615 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,617 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+14:57:59,618 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,620 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,622 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,624 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,625 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,627 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,629 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,630 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,632 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,634 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,636 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,637 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,639 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,663 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,668 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,672 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,674 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,676 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,677 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,679 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,681 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,682 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,684 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,686 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,688 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,690 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,692 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,693 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,695 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,721 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,728 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,730 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,732 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,733 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,735 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,736 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,738 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,740 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,742 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,744 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,746 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,748 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,749 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,751 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,752 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,754 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,756 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,757 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,759 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,761 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,762 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,764 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,766 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,768 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,776 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,792 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,796 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,797 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,799 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,800 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,802 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,803 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,807 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,809 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,823 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,826 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,827 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,829 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,830 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,832 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,840 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,866 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,869 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,942 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,948 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,952 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,954 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,957 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,970 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,974 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,975 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,977 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,978 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,980 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,983 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,984 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,986 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,988 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:57:59,990 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:57:59,992 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,009 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,012 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,014 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,016 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,017 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,019 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,020 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,024 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,026 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,032 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,034 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,035 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,036 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,039 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,041 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,042 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,057 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,059 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,060 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,062 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,063 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,065 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,070 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,074 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,076 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,077 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,079 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,081 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,082 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,084 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,086 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,087 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,094 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,106 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,118 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,128 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,140 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,142 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,143 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,151 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,157 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,158 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,160 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,161 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,163 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,164 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,166 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,167 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,168 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,170 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,179 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,191 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,192 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,194 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,198 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,200 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,201 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,203 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,204 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,208 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,223 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,225 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,226 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,228 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,229 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,231 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,232 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,233 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,235 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,236 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,238 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,240 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,242 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,247 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,249 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,250 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,252 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,254 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,256 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,257 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,259 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,260 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,262 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,263 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,264 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,266 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,267 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,269 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,270 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,272 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,273 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,275 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,276 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,277 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,279 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,284 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,285 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,287 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,288 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,290 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,291 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,292 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,294 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,295 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,296 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,305 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:00,307 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+14:58:00,310 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+14:58:10,944  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3b8628c8: startup date [Mon Mar 28 14:58:10 CEST 2016]; root of context hierarchy
+14:58:11,014  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+14:58:11,943  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+14:58:11,951  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+14:58:11,956  INFO Environment:239 - HHH000206: hibernate.properties not found
+14:58:11,958  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+14:58:11,986  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+14:58:12,019  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:58:12,070  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+14:58:12,828  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:58:12,960  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+14:58:13,142  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:58:13,149  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:58:13,603  INFO SchemaValidator:157 - HHH000229: Running schema validator
+14:58:13,603  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+14:58:13,623  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+14:58:13,645  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:58:13,651  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+14:58:13,652  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:58:13,661  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+14:58:13,661  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+14:58:13,668  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+14:58:13,669  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+14:58:13,675  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+14:58:13,675  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+14:58:13,832  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@3da94292] of Hibernate SessionFactory for HibernateTransactionManager
+14:58:13,933 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+14:58:14,045  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@46660d14: startup date [Mon Mar 28 14:58:14 CEST 2016]; root of context hierarchy
+14:58:14,048  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+14:58:14,272  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+14:58:14,274  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:58:14,278  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+14:58:14,370  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:58:14,372  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+14:58:14,392  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:58:14,396  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:58:14,464  INFO SchemaValidator:157 - HHH000229: Running schema validator
+14:58:14,465  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+14:58:14,470  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+14:58:14,471  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:58:14,482  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+14:58:14,483  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:58:14,490  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+14:58:14,491  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+14:58:14,497  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+14:58:14,498  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+14:58:14,504  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+14:58:14,505  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+14:58:14,542  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@913a8f4] of Hibernate SessionFactory for HibernateTransactionManager
+14:58:14,778 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+14:59:54,491  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@476127f4: startup date [Mon Mar 28 14:59:54 CEST 2016]; root of context hierarchy
+14:59:54,559  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+14:59:55,664  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+14:59:55,672  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+14:59:55,676  INFO Environment:239 - HHH000206: hibernate.properties not found
+14:59:55,678  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+14:59:55,710  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+14:59:55,753  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:59:55,951  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+14:59:56,947  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:59:57,106  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+14:59:57,265  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:59:57,271  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:59:57,736  INFO SchemaValidator:157 - HHH000229: Running schema validator
+14:59:57,736  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+14:59:57,756  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+14:59:57,781  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:59:57,787  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+14:59:57,787  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:59:57,794  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+14:59:57,794  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+14:59:57,801  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+14:59:57,802  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+14:59:57,809  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+14:59:57,809  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+14:59:57,956  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@250b1f5c] of Hibernate SessionFactory for HibernateTransactionManager
+14:59:58,062 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+14:59:58,164  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3c6369b0: startup date [Mon Mar 28 14:59:58 CEST 2016]; root of context hierarchy
+14:59:58,166  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+14:59:58,371  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+14:59:58,374  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+14:59:58,391  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+14:59:58,485  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:59:58,504  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+14:59:58,528  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:59:58,529  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:59:58,621  INFO SchemaValidator:157 - HHH000229: Running schema validator
+14:59:58,621  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+14:59:58,626  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+14:59:58,627  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:59:58,630  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+14:59:58,631  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+14:59:58,635  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+14:59:58,636  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+14:59:58,641  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+14:59:58,642  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+14:59:58,647  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+14:59:58,648  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+14:59:58,669  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@7a37cacc] of Hibernate SessionFactory for HibernateTransactionManager
+14:59:58,889 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:00:56,485  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f13f599: startup date [Mon Mar 28 15:00:56 CEST 2016]; root of context hierarchy
+15:00:56,557  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:00:57,602  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:00:57,610  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:00:57,615  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:00:57,617  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:00:57,649  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:00:57,683  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:00:57,717  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:00:58,376  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:00:58,507  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:00:58,664  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:00:58,671  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:00:59,100  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:00:59,101  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:00:59,120  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:00:59,143  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:00:59,148  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:00:59,149  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:00:59,158  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:00:59,159  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+15:00:59,168  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:00:59,168  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+15:00:59,177  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:00:59,177  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+15:00:59,347  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@250b1f5c] of Hibernate SessionFactory for HibernateTransactionManager
+15:00:59,458 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:00:59,568  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3c6369b0: startup date [Mon Mar 28 15:00:59 CEST 2016]; root of context hierarchy
+15:00:59,571  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:00:59,833  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:00:59,836  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:00:59,840  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:00:59,941  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:00:59,968  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:01:00,011  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:01:00,011  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:01:00,069  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:01:00,074  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:01:00,079  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:01:00,080  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:01:00,086  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:01:00,087  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:01:00,093  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:01:00,093  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+15:01:00,100  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:01:00,100  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+15:01:00,107  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:01:00,108  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+15:01:00,128  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@64e355c3] of Hibernate SessionFactory for HibernateTransactionManager
+15:01:00,345 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:01:59,343  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4520ebad: startup date [Mon Mar 28 15:01:59 CEST 2016]; root of context hierarchy
+15:01:59,471  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:02:00,568  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:02:00,634  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:02:00,647  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:02:00,652  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:02:00,682  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:02:00,750  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:02:00,830  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:02:01,627  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:02:01,887  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:02:02,188  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:02:02,195  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:02:02,682  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:02:02,683  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:02:02,702  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:02:02,709  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:02:02,754  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:02:02,762  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:02:02,776  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:02:02,779  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:02:02,797  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:02:02,809  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:02:02,828  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:02:02,845  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:02:02,953  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@173b9122] of Hibernate SessionFactory for HibernateTransactionManager
+15:02:03,071 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:02:03,205  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@456abb66: startup date [Mon Mar 28 15:02:03 CEST 2016]; root of context hierarchy
+15:02:03,210  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:02:03,299  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:02:03,301  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:02:03,304  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:02:03,336  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:02:03,338  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:02:03,353  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:02:03,354  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:02:03,410  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:02:03,428  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:02:03,436  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:02:03,437  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:02:03,443  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:02:03,443  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:02:03,449  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:02:03,450  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:02:03,454  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:02:03,458  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:02:03,463  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:02:03,466  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:02:03,479  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@408a247c] of Hibernate SessionFactory for HibernateTransactionManager
+15:02:03,715 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:03:55,840  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@470d6c27: startup date [Mon Mar 28 15:03:55 CEST 2016]; root of context hierarchy
+15:03:55,954  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:03:56,930  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:03:56,940  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:03:56,942  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:03:56,944  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:03:56,973  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:03:57,019  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:03:57,056  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:03:57,869  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:03:57,975  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:03:58,145  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:03:58,151  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:03:58,542  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:03:58,542  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:03:58,549  INFO DatabaseMetaData:147 - HHH000262: Table not found: Client
+15:04:24,694  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77e64656: startup date [Mon Mar 28 15:04:24 CEST 2016]; root of context hierarchy
+15:04:24,763  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:04:25,696  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:04:25,706  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:04:25,711  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:04:25,713  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:04:25,743  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:04:25,775  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:04:25,806  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:04:26,491  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:04:26,602  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:04:26,748  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:04:26,754  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:04:27,194  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:04:27,195  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:04:27,202  INFO DatabaseMetaData:147 - HHH000262: Table not found: Client
+15:04:27,256  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@608dff51: startup date [Mon Mar 28 15:04:27 CEST 2016]; root of context hierarchy
+15:04:27,259  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:04:27,484  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:04:27,486  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:04:27,490  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:04:27,561  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:04:27,563  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:04:27,581  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:04:27,581  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:04:27,647  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:04:27,647  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:04:27,649  INFO DatabaseMetaData:147 - HHH000262: Table not found: Client
+15:04:56,105  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77e64656: startup date [Mon Mar 28 15:04:56 CEST 2016]; root of context hierarchy
+15:04:56,173  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:04:57,239  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:04:57,248  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:04:57,252  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:04:57,254  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:04:57,286  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:04:57,318  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:04:57,354  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:04:58,053  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:04:58,212  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:04:58,361  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:04:58,369  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:04:58,794  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+15:04:58,797 DEBUG SQL:109 - alter table Client drop foreign key FK_tmsskjhmh47g1dfd33o3msmgg
+15:04:58,813 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table Client drop foreign key FK_tmsskjhmh47g1dfd33o3msmgg
+15:04:58,831 ERROR SchemaExport:427 - Table 'bdd_banque.client' doesn't exist
+15:04:58,832 DEBUG SQL:109 - alter table Conseiller drop foreign key FK_1g42pjxn7l6j09l5xg8vto3be
+15:04:58,833 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table Conseiller drop foreign key FK_1g42pjxn7l6j09l5xg8vto3be
+15:04:58,833 ERROR SchemaExport:427 - Table 'bdd_banque.conseiller' doesn't exist
+15:04:58,833 DEBUG SQL:109 - alter table compte drop foreign key FK_20a8vu6mk97d7bty54i0lsjr
+15:04:58,834 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table compte drop foreign key FK_20a8vu6mk97d7bty54i0lsjr
+15:04:58,835 ERROR SchemaExport:427 - Table 'bdd_banque.compte' doesn't exist
+15:04:58,835 DEBUG SQL:109 - alter table operation_compte drop foreign key FK_pd5x0grc9ny57rpfirwka107m
+15:04:58,836 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table operation_compte drop foreign key FK_pd5x0grc9ny57rpfirwka107m
+15:04:58,836 ERROR SchemaExport:427 - Table 'bdd_banque.operation_compte' doesn't exist
+15:04:58,836 DEBUG SQL:109 - drop table if exists Client
+15:04:58,838 DEBUG SQL:109 - drop table if exists Conseiller
+15:04:58,839 DEBUG SQL:109 - drop table if exists compte
+15:04:58,840 DEBUG SQL:109 - drop table if exists operation_compte
+15:04:58,840 DEBUG SQL:109 - drop table if exists utilisateur
+15:04:58,841 DEBUG SQL:109 - create table Client (id_utilisateur integer not null, primary key (id_utilisateur))
+15:04:58,857 DEBUG SQL:109 - create table Conseiller (id_utilisateur integer not null, primary key (id_utilisateur))
+15:04:58,875 DEBUG SQL:109 - create table compte (numero_compte integer not null auto_increment, date_de_creation datetime not null, type_de_compte varchar(45) not null, id_utilisateur integer, primary key (numero_compte))
+15:04:58,891 DEBUG SQL:109 - create table operation_compte (type_operation varchar(31) not null, numero_operation integer not null auto_increment, date_operation datetime not null, montant double precision not null, lesOperation integer not null, primary key (numero_operation))
+15:04:58,908 DEBUG SQL:109 - create table utilisateur (type_utilisateur varchar(31) not null, id_utilisateur integer not null auto_increment, mail varchar(45) not null, mot_de_passe varchar(45) not null, nom varchar(45) not null, prenom varchar(45) not null, primary key (id_utilisateur))
+15:04:58,922 DEBUG SQL:109 - alter table Client add constraint FK_tmsskjhmh47g1dfd33o3msmgg foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+15:04:58,942 DEBUG SQL:109 - alter table Conseiller add constraint FK_1g42pjxn7l6j09l5xg8vto3be foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+15:04:58,962 DEBUG SQL:109 - alter table compte add constraint FK_20a8vu6mk97d7bty54i0lsjr foreign key (id_utilisateur) references Client (id_utilisateur)
+15:04:58,984 DEBUG SQL:109 - alter table operation_compte add constraint FK_pd5x0grc9ny57rpfirwka107m foreign key (lesOperation) references compte (numero_compte)
+15:04:59,012  INFO SchemaExport:406 - HHH000230: Schema export complete
+15:04:59,191  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@f23030d] of Hibernate SessionFactory for HibernateTransactionManager
+15:04:59,330 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:04:59,361  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75d46202: startup date [Mon Mar 28 15:04:59 CEST 2016]; root of context hierarchy
+15:04:59,363  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:04:59,555  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:04:59,569  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:04:59,572  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:04:59,653  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:04:59,656  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:04:59,675  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:04:59,688  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:04:59,741  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+15:04:59,743 DEBUG SQL:109 - alter table Client drop foreign key FK_tmsskjhmh47g1dfd33o3msmgg
+15:04:59,754 DEBUG SQL:109 - alter table Conseiller drop foreign key FK_1g42pjxn7l6j09l5xg8vto3be
+15:04:59,768 DEBUG SQL:109 - alter table compte drop foreign key FK_20a8vu6mk97d7bty54i0lsjr
+15:04:59,781 DEBUG SQL:109 - alter table operation_compte drop foreign key FK_pd5x0grc9ny57rpfirwka107m
+15:04:59,806 DEBUG SQL:109 - drop table if exists Client
+15:04:59,808 DEBUG SQL:109 - drop table if exists Conseiller
+15:04:59,811 DEBUG SQL:109 - drop table if exists compte
+15:04:59,814 DEBUG SQL:109 - drop table if exists operation_compte
+15:04:59,816 DEBUG SQL:109 - drop table if exists utilisateur
+15:04:59,818 DEBUG SQL:109 - create table Client (id_utilisateur integer not null, primary key (id_utilisateur))
+15:04:59,838 DEBUG SQL:109 - create table Conseiller (id_utilisateur integer not null, primary key (id_utilisateur))
+15:04:59,869 DEBUG SQL:109 - create table compte (numero_compte integer not null auto_increment, date_de_creation datetime not null, type_de_compte varchar(45) not null, id_utilisateur integer, primary key (numero_compte))
+15:04:59,884 DEBUG SQL:109 - create table operation_compte (type_operation varchar(31) not null, numero_operation integer not null auto_increment, date_operation datetime not null, montant double precision not null, lesOperation integer not null, primary key (numero_operation))
+15:04:59,897 DEBUG SQL:109 - create table utilisateur (type_utilisateur varchar(31) not null, id_utilisateur integer not null auto_increment, mail varchar(45) not null, mot_de_passe varchar(45) not null, nom varchar(45) not null, prenom varchar(45) not null, primary key (id_utilisateur))
+15:04:59,909 DEBUG SQL:109 - alter table Client add constraint FK_tmsskjhmh47g1dfd33o3msmgg foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+15:04:59,928 DEBUG SQL:109 - alter table Conseiller add constraint FK_1g42pjxn7l6j09l5xg8vto3be foreign key (id_utilisateur) references utilisateur (id_utilisateur)
+15:04:59,949 DEBUG SQL:109 - alter table compte add constraint FK_20a8vu6mk97d7bty54i0lsjr foreign key (id_utilisateur) references Client (id_utilisateur)
+15:04:59,971 DEBUG SQL:109 - alter table operation_compte add constraint FK_pd5x0grc9ny57rpfirwka107m foreign key (lesOperation) references compte (numero_compte)
+15:04:59,991  INFO SchemaExport:406 - HHH000230: Schema export complete
+15:05:00,073  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@9c3ce17] of Hibernate SessionFactory for HibernateTransactionManager
+15:05:00,364 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:05:31,328  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@423798e2: startup date [Mon Mar 28 15:05:31 CEST 2016]; root of context hierarchy
+15:05:31,409  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:05:32,367  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:05:32,374  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:05:32,377  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:05:32,378  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:05:32,404  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:05:32,437  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:05:32,467  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:05:33,127  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:05:33,260  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:05:33,434  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:05:33,442  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:05:33,895  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:05:33,895  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:05:33,913  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:05:33,916  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:05:33,977  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:05:33,977  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:05:33,984  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:05:33,984  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+15:05:33,992  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:05:33,992  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+15:05:34,000  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:05:34,002  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+15:05:34,177  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@20f93185] of Hibernate SessionFactory for HibernateTransactionManager
+15:05:34,300 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+15:05:34,344 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+15:05:34,349 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+15:05:34,351 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+15:05:34,354 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+15:05:34,356 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+15:05:34,358 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+15:05:34,360 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+15:05:34,364 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+15:05:34,367 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+15:05:34,368 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+15:05:34,370 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+15:05:34,371 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,383 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,385 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,386 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,389 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,390 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,392 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,394 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,396 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,397 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+15:05:34,399 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,402 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,403 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,405 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,407 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,411 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,413 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,416 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,418 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,421 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,425 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,428 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,430 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,432 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,434 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,435 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,437 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,439 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,440 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,442 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,445 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,446 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,448 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,450 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,451 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,453 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,455 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,456 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,458 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,460 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,462 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,465 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,467 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,469 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,471 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,472 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,474 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,476 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,479 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,481 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,482 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,484 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,486 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,488 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,490 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,491 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,493 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,495 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,498 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,500 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,502 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,504 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,506 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,510 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,512 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,514 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,517 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,519 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,522 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,526 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,528 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,530 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,532 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,534 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,535 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,537 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,539 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,542 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,545 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,547 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,548 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,551 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,564 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,576 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,595 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,597 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,600 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,602 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,617 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,619 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,621 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,622 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,627 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,629 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,631 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,633 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,634 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,636 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,637 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,639 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,640 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,642 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,643 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,645 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,647 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,648 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,650 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,651 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,652 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,654 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,656 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,681 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,688 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,690 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,694 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,696 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,706 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,708 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,710 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,712 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,714 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,715 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,717 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,718 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,720 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,721 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,723 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,724 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,726 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,728 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,729 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,731 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,732 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,734 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,735 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,737 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,738 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,740 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,742 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,743 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,745 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,746 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,748 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,749 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,751 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,752 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,754 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,755 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,756 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,758 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,759 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,761 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,762 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,764 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,765 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,767 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,768 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,770 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,771 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,772 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,774 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,775 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,777 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,778 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,780 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,781 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,783 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,795 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,797 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,800 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,802 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,804 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,806 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,808 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,809 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,811 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,813 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,814 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,817 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,818 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,820 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,821 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,823 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,824 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,826 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,828 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,829 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,830 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,832 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,833 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,835 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,837 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,838 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,840 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,842 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,843 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,846 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,848 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,852 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,853 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,855 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,856 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,859 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,860 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,862 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,863 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,865 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:34,867 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+15:05:34,868 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+15:05:53,349  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6c48326b: startup date [Mon Mar 28 15:05:53 CEST 2016]; root of context hierarchy
+15:05:53,424  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:05:54,355  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:05:54,364  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:05:54,367  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:05:54,370  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:05:54,401  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:05:54,433  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:05:54,478  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:05:55,150  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:05:55,305  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:05:55,469  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:05:55,475  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:05:56,334  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:05:56,335  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:05:56,352  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:05:56,375  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:05:56,380  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:05:56,381  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:05:56,398  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:05:56,399  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+15:05:56,406  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:05:56,406  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+15:05:56,412  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:05:56,412  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+15:05:56,571  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@145db24a] of Hibernate SessionFactory for HibernateTransactionManager
+15:05:56,674 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:05:56,774  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5e7dac7d: startup date [Mon Mar 28 15:05:56 CEST 2016]; root of context hierarchy
+15:05:56,779  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:05:57,003  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:05:57,006  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:05:57,009  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:05:57,095  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:05:57,098  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:05:57,136  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:05:57,137  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:05:57,226  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:05:57,226  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:05:57,231  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:05:57,232  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:05:57,235  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:05:57,236  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:05:57,242  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:05:57,243  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+15:05:57,249  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:05:57,250  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+15:05:57,256  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:05:57,257  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+15:05:57,309  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@3056c932] of Hibernate SessionFactory for HibernateTransactionManager
+15:05:57,524 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+15:06:24,436  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4520ebad: startup date [Mon Mar 28 15:06:24 CEST 2016]; root of context hierarchy
+15:06:24,492  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:06:25,235  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+15:06:25,242  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+15:06:25,244  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:06:25,246  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:06:25,267  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:06:25,315  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:06:25,360  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:06:25,984  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:06:26,195  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:06:26,349  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:06:26,355  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:06:26,767  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:06:26,767  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:06:26,789  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:06:26,791  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:06:26,797  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:06:26,798  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:06:26,807  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:06:26,807  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:06:26,814  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:06:26,814  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:06:26,825  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:06:26,833  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:06:26,961  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@7c18432b] of Hibernate SessionFactory for HibernateTransactionManager
+15:06:27,062 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+15:06:27,195  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@456abb66: startup date [Mon Mar 28 15:06:27 CEST 2016]; root of context hierarchy
+15:06:27,210  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+15:06:27,326  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+15:06:27,345  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+15:06:27,348  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+15:06:27,377  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:06:27,382  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+15:06:27,400  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:06:27,401  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:06:27,489  INFO SchemaValidator:157 - HHH000229: Running schema validator
+15:06:27,489  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+15:06:27,495  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Client
+15:06:27,496  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:06:27,504  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.Conseiller
+15:06:27,505  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+15:06:27,511  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.compte
+15:06:27,512  INFO TableMetadata:67 - HHH000037: Columns: [numero_compte, id_utilisateur, type_de_compte, date_de_creation]
+15:06:27,517  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.operation_compte
+15:06:27,518  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, lesoperation, montant, date_operation, type_operation]
+15:06:27,522  INFO TableMetadata:66 - HHH000261: Table found: bdd_banque.utilisateur
+15:06:27,523  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
+15:06:27,535  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@408a247c] of Hibernate SessionFactory for HibernateTransactionManager
+15:06:27,717 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
