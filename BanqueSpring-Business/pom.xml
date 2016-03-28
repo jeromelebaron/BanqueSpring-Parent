@@ -11,9 +11,9 @@
 	</parent>
 	<dependencies>
 		<dependency>
-			<groupId>fr.afcepf.atod26.java</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>BanqueSpring-Data</artifactId>
-			<version>0.1</version>
+			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
 </project>
