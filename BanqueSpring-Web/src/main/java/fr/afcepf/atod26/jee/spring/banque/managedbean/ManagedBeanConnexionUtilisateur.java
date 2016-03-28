@@ -10,6 +10,7 @@ import fr.afcepf.atod26.java.spring.banque.api.IBusinessConnexion;
 import fr.afcepf.atod26.java.spring.banque.entity.Client;
 import fr.afcepf.atod26.java.spring.banque.entity.Conseiller;
 import fr.afcepf.atod26.java.spring.banque.entity.Utilisateur;
+import fr.afcepf.atod26.java.spring.banque.exception.BanqueException;
 
 @ManagedBean
 @SessionScoped
@@ -37,7 +38,7 @@ public class ManagedBeanConnexionUtilisateur {
             } else if (utilisateurConnecte.getClass() == Conseiller.class) {
                 redirection = "detailconseiller.jsf?faces-redirect=true";
             }
-        } catch (Exception e) {
+        } catch (BanqueException e) {
             LOG.debug(e);
             message = "Login ou mot de passe erroné";
         }
