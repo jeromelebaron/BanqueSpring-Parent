@@ -30,6 +30,7 @@ public class DaoSQLCompte implements IDaoCompte {
     }
 
     @Override
+    @Transactional
     public List<Compte> getCompteByIdClient(final int paramIdClient) {
         final String[] lesParam = { "paramIdClient" };
         final Object[] lesValeurs = { paramIdClient };
@@ -37,6 +38,7 @@ public class DaoSQLCompte implements IDaoCompte {
     }
 
     @Override
+    @Transactional
     public Compte insertCompte(final Compte paramCompte) {
         hbTemplate.save(paramCompte);
         return paramCompte;

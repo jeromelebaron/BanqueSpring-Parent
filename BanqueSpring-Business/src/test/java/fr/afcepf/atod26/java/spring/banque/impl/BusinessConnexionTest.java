@@ -22,7 +22,7 @@ public class BusinessConnexionTest {
 
 	@Before
 	public void init() {
-		BeanFactory bf = new ClassPathXmlApplicationContext("classpath:spring-business.xml");
+		BeanFactory bf = new ClassPathXmlApplicationContext("classpath*:spring-business.xml");
 		businessConnexion = bf.getBean(IBusinessConnexion.class);
 	}
 	

@@ -110,3 +110,46 @@
 17:43:24,157  INFO TableMetadata:67 - HHH000037: Columns: [type_utilisateur, mail, id_utilisateur, mot_de_passe, nom, prenom]
 17:43:24,333  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@54ec8cc9] of Hibernate SessionFactory for HibernateTransactionManager
 17:43:24,814 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+18:58:03,163  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6d00a15d: startup date [Sat Apr 02 18:58:03 CEST 2016]; root of context hierarchy
+18:58:03,245  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
+18:58:03,559  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+18:59:48,814  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3b8628c8: startup date [Sat Apr 02 18:59:48 CEST 2016]; root of context hierarchy
+18:59:48,895  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
+18:59:49,246  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+19:02:19,104  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@476127f4: startup date [Sat Apr 02 19:02:19 CEST 2016]; root of context hierarchy
+19:02:19,173  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
+19:02:19,541  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+19:03:51,475  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2bb34e41: startup date [Sat Apr 02 19:03:51 CEST 2016]; root of context hierarchy
+19:03:51,583  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
+19:03:52,060  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+19:06:52,845  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3b8628c8: startup date [Sat Apr 02 19:06:52 CEST 2016]; root of context hierarchy
+19:06:52,913  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
+19:06:53,308  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+19:10:21,724  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6f933da1: startup date [Sat Apr 02 19:10:21 CEST 2016]; root of context hierarchy
+19:10:21,811  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:10:22,225  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+19:11:40,503  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@8d6a3d1: startup date [Sat Apr 02 19:11:40 CEST 2016]; root of context hierarchy
+19:11:40,583  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:16:17,639  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6f933da1: startup date [Sat Apr 02 19:16:17 CEST 2016]; root of context hierarchy
+19:16:17,715  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:18:16,191  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3b8628c8: startup date [Sat Apr 02 19:18:16 CEST 2016]; root of context hierarchy
+19:18:16,254  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:23:20,639  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2bb34e41: startup date [Sat Apr 02 19:23:20 CEST 2016]; root of context hierarchy
+19:23:20,721  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:26:02,131  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b454096: startup date [Sat Apr 02 19:26:02 CEST 2016]; root of context hierarchy
+19:26:02,205  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:34:09,618  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6f933da1: startup date [Sat Apr 02 19:34:09 CEST 2016]; root of context hierarchy
+19:34:09,689  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:35:02,212  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3515f1d3: startup date [Sat Apr 02 19:35:02 CEST 2016]; root of context hierarchy
+19:35:02,283  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:35:37,903  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2bb34e41: startup date [Sat Apr 02 19:35:37 CEST 2016]; root of context hierarchy
+19:35:37,973  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:35:38,416  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+19:36:13,590  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@439cf2df: startup date [Sat Apr 02 19:36:13 CEST 2016]; root of context hierarchy
+19:36:13,673  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:36:14,182  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+19:36:47,601  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3515f1d3: startup date [Sat Apr 02 19:36:47 CEST 2016]; root of context hierarchy
+19:36:47,675  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:40:00,377  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6c10fa4d: startup date [Sat Apr 02 19:40:00 CEST 2016]; root of context hierarchy
+19:40:00,444  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+19:40:00,833  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
