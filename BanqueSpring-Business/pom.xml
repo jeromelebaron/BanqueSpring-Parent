@@ -7,13 +7,27 @@
 		<groupId>fr.afcepf.atod26</groupId>
 		<artifactId>BanqueSpring-Parent</artifactId>
 		<version>0.1</version>
-		<relativePath>../BanqueSpring-Parent/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>BanqueSpring-Data</artifactId>
 			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>apache-log4j-extras</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
 </project>

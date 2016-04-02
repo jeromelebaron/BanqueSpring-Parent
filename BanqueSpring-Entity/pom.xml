@@ -7,6 +7,12 @@
 		<groupId>fr.afcepf.atod26</groupId>
 		<artifactId>BanqueSpring-Parent</artifactId>
 		<version>0.1</version>
-		<relativePath>../BanqueSpring-Parent/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+	</dependencies>
 </project>
