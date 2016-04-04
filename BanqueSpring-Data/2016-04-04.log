@@ -1,0 +1,1560 @@
+09:34:47,409  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@77ed2fe7: startup date [Mon Apr 04 09:34:47 CEST 2016]; root of context hierarchy
+09:34:47,464  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:34:48,116  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:34:48,123  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:34:48,125  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:34:48,127  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:34:48,150  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:34:48,194  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:34:48,224  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:34:48,328  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot load JDBC driver class 'org.postgresql.Driver'
+09:34:48,339  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:34:48,348  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:34:48,414  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:34:48,547  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:34:48,552  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:34:49,012  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:34:49,014  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:34:49,018 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot load JDBC driver class 'org.postgresql.Driver'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2001)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.ClassNotFoundException: org.postgresql.Driver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:1992)
+	... 67 more
+09:34:49,028 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot load JDBC driver class 'org.postgresql.Driver'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2001)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.ClassNotFoundException: org.postgresql.Driver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:1992)
+	... 67 more
+09:34:49,144  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@754eb88d] of Hibernate SessionFactory for HibernateTransactionManager
+09:34:49,215 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:34:49,217  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:34:49,217 ERROR SqlExceptionHelper:146 - Cannot load JDBC driver class 'org.postgresql.Driver'
+09:34:49,230  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@8e8ea0a: startup date [Mon Apr 04 09:34:49 CEST 2016]; root of context hierarchy
+09:34:49,233  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:34:49,339  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:34:49,341  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:34:49,344  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:34:49,358  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot load JDBC driver class 'org.postgresql.Driver'
+09:34:49,358  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:34:49,359  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:34:49,360  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:34:49,378  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:34:49,378  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:34:49,432  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:34:49,432  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:34:49,434 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot load JDBC driver class 'org.postgresql.Driver'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2001)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.ClassNotFoundException: org.postgresql.Driver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:1992)
+	... 67 more
+09:34:49,436 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot load JDBC driver class 'org.postgresql.Driver'
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:2001)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1897)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.ClassNotFoundException: org.postgresql.Driver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.apache.commons.dbcp2.BasicDataSource.createConnectionFactory(BasicDataSource.java:1992)
+	... 67 more
+09:34:49,456  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@568b8271] of Hibernate SessionFactory for HibernateTransactionManager
+09:34:49,468  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:34:49,468 ERROR SqlExceptionHelper:146 - Cannot load JDBC driver class 'org.postgresql.Driver'
+09:35:54,057  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2e04cc39: startup date [Mon Apr 04 09:35:54 CEST 2016]; root of context hierarchy
+09:35:54,120  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:35:54,744  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:35:54,744  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:35:54,744  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:35:54,759  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:35:54,776  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:35:54,791  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:35:54,838  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:35:55,072  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:35:55,088  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:35:55,088  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:35:55,166  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:35:55,275  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:35:55,275  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:35:55,712  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:35:55,712  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:35:55,759 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:35:55,774 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:35:55,883  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@cc78032] of Hibernate SessionFactory for HibernateTransactionManager
+09:35:55,947 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:35:55,978  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:35:55,978 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:35:55,994  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@79a08662: startup date [Mon Apr 04 09:35:55 CEST 2016]; root of context hierarchy
+09:35:55,994  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:35:56,118  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:35:56,118  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:35:56,118  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:35:56,165  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:35:56,165  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:35:56,165  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:35:56,165  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:35:56,196  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:35:56,196  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:35:56,228  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:35:56,228  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:35:56,259 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:35:56,274 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:35:56,290  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@16583b49] of Hibernate SessionFactory for HibernateTransactionManager
+09:35:56,337  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:35:56,337 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:40:21,869  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3cfbc9c9: startup date [Mon Apr 04 09:40:21 CEST 2016]; root of context hierarchy
+09:40:21,963  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:40:22,807  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:40:22,807  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:40:22,822  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:40:22,822  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:40:22,854  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:40:22,885  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:40:22,933  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:40:23,245  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:40:23,260  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:40:23,276  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:40:23,369  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:40:23,541  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:40:23,557  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:40:24,088  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:40:24,088  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:40:24,119 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:40:24,135 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:40:24,276  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@5ab0caa2] of Hibernate SessionFactory for HibernateTransactionManager
+09:40:24,370 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:40:24,401  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:40:24,401 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:40:24,417  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@92572fe: startup date [Mon Apr 04 09:40:24 CEST 2016]; root of context hierarchy
+09:40:24,417  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:40:24,557  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:40:24,557  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:40:24,557  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:40:24,619  WARN JdbcServicesImpl:204 - HHH000342: Could not obtain connection to query metadata : Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:40:24,619  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:40:24,619  INFO LobCreatorBuilder:88 - HHH000422: Disabling contextual LOB creation as connection was null
+09:40:24,619  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:40:24,651  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:40:24,651  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:40:24,697  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:40:24,697  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:40:24,729 ERROR SchemaValidator:171 - HHH000319: Could not get database metadata
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:40:24,729 ERROR SchemaValidator:179 - HHH000300: Could not complete schema validation
+java.sql.SQLException: Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2152)
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:1903)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.prepare(SuppliedConnectionProviderConnectionHelper.java:51)
+	at org.hibernate.tool.hbm2ddl.SchemaValidator.validate(SchemaValidator.java:166)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:525)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1859)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1930)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:343)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:431)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:553)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:700)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at fr.afcepf.atod26.java.spring.banque.impl.DaoSQLUtilisateurTest.init(DaoSQLUtilisateurTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.sql.SQLFeatureNotSupportedException: La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.
+	at org.postgresql.Driver.notImplemented(Driver.java:753)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.isValid(AbstractJdbc4Connection.java:120)
+	at org.postgresql.jdbc4.Jdbc4Connection.isValid(Jdbc4Connection.java:21)
+	at org.apache.commons.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:914)
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:219)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2165)
+	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2148)
+	... 67 more
+09:40:24,761  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@419c494d] of Hibernate SessionFactory for HibernateTransactionManager
+09:40:24,823  WARN SqlExceptionHelper:144 - SQL Error: 0, SQLState: null
+09:40:24,823 ERROR SqlExceptionHelper:146 - Cannot create PoolableConnectionFactory (La fonction org.postgresql.jdbc4.Jdbc4Connection.isValid(int) n'est pas encore implémentée.)
+09:46:10,559  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@74e42433: startup date [Mon Apr 04 09:46:10 CEST 2016]; root of context hierarchy
+09:46:10,605  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:46:11,276  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:46:11,292  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:46:11,292  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:46:11,292  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:46:11,324  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:46:11,340  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:46:11,371  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:46:11,839  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:46:11,870  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:46:11,932  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:46:12,057  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:46:12,057  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:46:12,463  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:46:12,463  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:46:12,511  INFO DatabaseMetaData:147 - HHH000262: Table not found: Client
+09:46:12,542  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6257f433: startup date [Mon Apr 04 09:46:12 CEST 2016]; root of context hierarchy
+09:46:12,542  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:46:12,651  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:46:12,651  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:46:12,667  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:46:12,869  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:46:12,869  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:46:12,869  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:46:12,885  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:46:12,885  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:46:12,932  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:46:12,932  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:46:12,947  INFO DatabaseMetaData:147 - HHH000262: Table not found: Client
+09:47:43,422  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3cfbc9c9: startup date [Mon Apr 04 09:47:43 CEST 2016]; root of context hierarchy
+09:47:43,484  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:47:44,124  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:47:44,124  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:47:44,124  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:47:44,124  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:47:44,156  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:47:44,172  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:47:44,203  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:47:44,640  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:47:44,655  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:47:44,718  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:47:44,843  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:47:44,843  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:47:45,233  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:47:45,233  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:47:45,265  INFO DatabaseMetaData:147 - HHH000262: Table not found: Client
+09:47:45,280  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7b728520: startup date [Mon Apr 04 09:47:45 CEST 2016]; root of context hierarchy
+09:47:45,280  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:47:45,390  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:47:45,390  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:47:45,390  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:47:45,592  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:47:45,592  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:47:45,608  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:47:45,624  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:47:45,624  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:47:45,670  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:47:45,670  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:47:45,670  INFO DatabaseMetaData:147 - HHH000262: Table not found: Client
+09:48:30,306  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3cfbc9c9: startup date [Mon Apr 04 09:48:30 CEST 2016]; root of context hierarchy
+09:48:30,369  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:48:31,008  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:48:31,008  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:48:31,008  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:48:31,008  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:48:31,040  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:48:31,056  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:48:31,087  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:48:31,508  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:48:31,540  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:48:31,602  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:48:31,727  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:48:31,727  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:48:32,132  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+09:48:32,148 DEBUG SQL:109 - alter table Client drop constraint FK_tmsskjhmh47g1dfd33o3msmgg
+09:48:32,243 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table Client drop constraint FK_tmsskjhmh47g1dfd33o3msmgg
+09:48:32,243 ERROR SchemaExport:427 - ERREUR: la relation « client » n'existe pas
+09:48:32,243 DEBUG SQL:109 - alter table Conseiller drop constraint FK_1g42pjxn7l6j09l5xg8vto3be
+09:48:32,243 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table Conseiller drop constraint FK_1g42pjxn7l6j09l5xg8vto3be
+09:48:32,243 ERROR SchemaExport:427 - ERREUR: la relation « conseiller » n'existe pas
+09:48:32,243 DEBUG SQL:109 - alter table compte drop constraint FK_20a8vu6mk97d7bty54i0lsjr
+09:48:32,243 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table compte drop constraint FK_20a8vu6mk97d7bty54i0lsjr
+09:48:32,243 ERROR SchemaExport:427 - ERREUR: la relation « compte » n'existe pas
+09:48:32,243 DEBUG SQL:109 - alter table operation_compte drop constraint FK_pd5x0grc9ny57rpfirwka107m
+09:48:32,243 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table operation_compte drop constraint FK_pd5x0grc9ny57rpfirwka107m
+09:48:32,243 ERROR SchemaExport:427 - ERREUR: la relation « operation_compte » n'existe pas
+09:48:32,243 DEBUG SQL:109 - drop table if exists Client cascade
+09:48:32,258 DEBUG SQL:109 - drop table if exists Conseiller cascade
+09:48:32,258 DEBUG SQL:109 - drop table if exists compte cascade
+09:48:32,258 DEBUG SQL:109 - drop table if exists operation_compte cascade
+09:48:32,258 DEBUG SQL:109 - drop table if exists utilisateur cascade
+09:48:32,258 DEBUG SQL:109 - create table Client (id_utilisateur int4 not null, primary key (id_utilisateur))
+09:48:32,352 DEBUG SQL:109 - create table Conseiller (id_utilisateur int4 not null, primary key (id_utilisateur))
+09:48:32,367 DEBUG SQL:109 - create table compte (numero_compte  serial not null, date_de_creation timestamp not null, type_de_compte varchar(45) not null, id_utilisateur int4, primary key (numero_compte))
+09:48:32,430 DEBUG SQL:109 - create table operation_compte (type_operation varchar(31) not null, numero_operation  serial not null, date_operation timestamp not null, montant float8 not null, lesOperation int4 not null, primary key (numero_operation))
+09:48:32,477 DEBUG SQL:109 - create table utilisateur (type_utilisateur varchar(31) not null, id_utilisateur  serial not null, mail varchar(45) not null, mot_de_passe varchar(45) not null, nom varchar(45) not null, prenom varchar(45) not null, primary key (id_utilisateur))
+09:48:32,508 DEBUG SQL:109 - alter table Client add constraint FK_tmsskjhmh47g1dfd33o3msmgg foreign key (id_utilisateur) references utilisateur
+09:48:32,555 DEBUG SQL:109 - alter table Conseiller add constraint FK_1g42pjxn7l6j09l5xg8vto3be foreign key (id_utilisateur) references utilisateur
+09:48:32,586 DEBUG SQL:109 - alter table compte add constraint FK_20a8vu6mk97d7bty54i0lsjr foreign key (id_utilisateur) references Client
+09:48:32,586 DEBUG SQL:109 - alter table operation_compte add constraint FK_pd5x0grc9ny57rpfirwka107m foreign key (lesOperation) references compte
+09:48:32,586  INFO SchemaExport:406 - HHH000230: Schema export complete
+09:48:32,664  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@6dcf2f2c] of Hibernate SessionFactory for HibernateTransactionManager
+09:48:32,757 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:48:32,773  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4ba39183: startup date [Mon Apr 04 09:48:32 CEST 2016]; root of context hierarchy
+09:48:32,773  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:48:32,882  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:48:32,882  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:48:32,882  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:48:33,132  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:48:33,132  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:48:33,132  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:48:33,132  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:48:33,132  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:48:33,163  INFO SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+09:48:33,163 DEBUG SQL:109 - alter table Client drop constraint FK_tmsskjhmh47g1dfd33o3msmgg
+09:48:33,195 DEBUG SQL:109 - alter table Conseiller drop constraint FK_1g42pjxn7l6j09l5xg8vto3be
+09:48:33,195 DEBUG SQL:109 - alter table compte drop constraint FK_20a8vu6mk97d7bty54i0lsjr
+09:48:33,195 DEBUG SQL:109 - alter table operation_compte drop constraint FK_pd5x0grc9ny57rpfirwka107m
+09:48:33,195 DEBUG SQL:109 - drop table if exists Client cascade
+09:48:33,195 DEBUG SQL:109 - drop table if exists Conseiller cascade
+09:48:33,195 DEBUG SQL:109 - drop table if exists compte cascade
+09:48:33,226 DEBUG SQL:109 - drop table if exists operation_compte cascade
+09:48:33,226 DEBUG SQL:109 - drop table if exists utilisateur cascade
+09:48:33,242 DEBUG SQL:109 - create table Client (id_utilisateur int4 not null, primary key (id_utilisateur))
+09:48:33,258 DEBUG SQL:109 - create table Conseiller (id_utilisateur int4 not null, primary key (id_utilisateur))
+09:48:33,258 DEBUG SQL:109 - create table compte (numero_compte  serial not null, date_de_creation timestamp not null, type_de_compte varchar(45) not null, id_utilisateur int4, primary key (numero_compte))
+09:48:33,289 DEBUG SQL:109 - create table operation_compte (type_operation varchar(31) not null, numero_operation  serial not null, date_operation timestamp not null, montant float8 not null, lesOperation int4 not null, primary key (numero_operation))
+09:48:33,320 DEBUG SQL:109 - create table utilisateur (type_utilisateur varchar(31) not null, id_utilisateur  serial not null, mail varchar(45) not null, mot_de_passe varchar(45) not null, nom varchar(45) not null, prenom varchar(45) not null, primary key (id_utilisateur))
+09:48:33,351 DEBUG SQL:109 - alter table Client add constraint FK_tmsskjhmh47g1dfd33o3msmgg foreign key (id_utilisateur) references utilisateur
+09:48:33,367 DEBUG SQL:109 - alter table Conseiller add constraint FK_1g42pjxn7l6j09l5xg8vto3be foreign key (id_utilisateur) references utilisateur
+09:48:33,367 DEBUG SQL:109 - alter table compte add constraint FK_20a8vu6mk97d7bty54i0lsjr foreign key (id_utilisateur) references Client
+09:48:33,398 DEBUG SQL:109 - alter table operation_compte add constraint FK_pd5x0grc9ny57rpfirwka107m foreign key (lesOperation) references compte
+09:48:33,398  INFO SchemaExport:406 - HHH000230: Schema export complete
+09:48:33,414  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@37907f79] of Hibernate SessionFactory for HibernateTransactionManager
+09:48:33,585 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+09:49:08,546  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@28325087: startup date [Mon Apr 04 09:49:08 CEST 2016]; root of context hierarchy
+09:49:08,624  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:49:09,279  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:49:09,295  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:49:09,295  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:49:09,295  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:49:09,311  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:49:09,342  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:49:09,374  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:49:09,826  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:49:09,842  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:49:09,904  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:49:10,013  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:49:10,029  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:49:10,419  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:49:10,419  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:49:10,434  INFO TableMetadata:66 - HHH000261: Table found: public.client
+09:49:10,434  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:49:10,451  INFO TableMetadata:66 - HHH000261: Table found: public.conseiller
+09:49:10,451  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:49:10,451  INFO TableMetadata:66 - HHH000261: Table found: public.compte
+09:49:10,451  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:49:10,467  INFO TableMetadata:66 - HHH000261: Table found: public.operation_compte
+09:49:10,467  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:49:10,467  INFO TableMetadata:66 - HHH000261: Table found: public.utilisateur
+09:49:10,467  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:49:10,576  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@3ea97e14] of Hibernate SessionFactory for HibernateTransactionManager
+09:49:10,685 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:49:10,701 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:49:10,701 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:49:10,701 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:49:10,701 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:49:10,701 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:49:10,701 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'client')
+09:49:10,701 DEBUG SQL:109 - insert into Client (id_utilisateur) values (?)
+09:49:10,716 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+09:49:10,716 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+09:49:10,716 DEBUG SQL:109 - insert into utilisateur (mail, mot_de_passe, nom, prenom, type_utilisateur) values (?, ?, ?, ?, 'conseiller')
+09:49:10,716 DEBUG SQL:109 - insert into Conseiller (id_utilisateur) values (?)
+09:49:10,716 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,732 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,732 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,732 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,732 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,732 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,732 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,732 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,747 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,747 DEBUG SQL:109 - insert into compte (id_utilisateur, date_de_creation, type_de_compte) values (?, ?, ?)
+09:49:10,747 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,747 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,747 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,747 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,747 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,747 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,747 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,763 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,779 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,794 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,810 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,825 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,841 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,857 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,872 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,888 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,903 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,919 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,935 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,950 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,966 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'debit')
+09:49:10,981 DEBUG SQL:109 - insert into operation_compte (lesOperation, date_operation, montant, type_operation) values (?, ?, ?, 'credit')
+09:49:20,686  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7fcaa2ba: startup date [Mon Apr 04 09:49:20 CEST 2016]; root of context hierarchy
+09:49:20,764  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:49:21,732  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:49:21,732  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:49:21,747  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:49:21,747  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:49:21,794  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:49:21,849  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:49:21,884  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:49:22,398  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:49:22,414  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:49:22,476  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:49:22,601  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:49:22,601  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:49:23,022  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:49:23,022  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:49:23,038  INFO TableMetadata:66 - HHH000261: Table found: public.client
+09:49:23,038  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:49:23,055  INFO TableMetadata:66 - HHH000261: Table found: public.conseiller
+09:49:23,055  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:49:23,055  INFO TableMetadata:66 - HHH000261: Table found: public.compte
+09:49:23,055  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:49:23,055  INFO TableMetadata:66 - HHH000261: Table found: public.operation_compte
+09:49:23,055  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:49:23,070  INFO TableMetadata:66 - HHH000261: Table found: public.utilisateur
+09:49:23,070  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:49:23,195  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@21450508] of Hibernate SessionFactory for HibernateTransactionManager
+09:49:23,273 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:49:23,351  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5c47556a: startup date [Mon Apr 04 09:49:23 CEST 2016]; root of context hierarchy
+09:49:23,367  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:49:23,507  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:49:23,523  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:49:23,523  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:49:23,725  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:49:23,725  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:49:23,725  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:49:23,741  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:49:23,741  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:49:23,772  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:49:23,772  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:49:23,788  INFO TableMetadata:66 - HHH000261: Table found: public.client
+09:49:23,788  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:49:23,788  INFO TableMetadata:66 - HHH000261: Table found: public.conseiller
+09:49:23,788  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:49:23,803  INFO TableMetadata:66 - HHH000261: Table found: public.compte
+09:49:23,803  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:49:23,803  INFO TableMetadata:66 - HHH000261: Table found: public.operation_compte
+09:49:23,803  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:49:23,819  INFO TableMetadata:66 - HHH000261: Table found: public.utilisateur
+09:49:23,819  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:49:23,835  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@55efeb51] of Hibernate SessionFactory for HibernateTransactionManager
+09:49:23,991 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+09:49:59,415  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3cfbc9c9: startup date [Mon Apr 04 09:49:59 CEST 2016]; root of context hierarchy
+09:49:59,477  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:50:00,117  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+09:50:00,117  INFO Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+09:50:00,117  INFO Environment:239 - HHH000206: hibernate.properties not found
+09:50:00,117  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+09:50:00,149  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:50:00,164  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:50:00,196  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:50:00,648  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:50:00,664  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:50:00,726  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:50:00,851  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:50:00,851  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:50:01,256  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:50:01,256  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:50:01,289  INFO TableMetadata:66 - HHH000261: Table found: public.client
+09:50:01,289  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:50:01,304  INFO TableMetadata:66 - HHH000261: Table found: public.conseiller
+09:50:01,304  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:50:01,304  INFO TableMetadata:66 - HHH000261: Table found: public.compte
+09:50:01,304  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:50:01,320  INFO TableMetadata:66 - HHH000261: Table found: public.operation_compte
+09:50:01,320  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:50:01,320  INFO TableMetadata:66 - HHH000261: Table found: public.utilisateur
+09:50:01,320  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:50:01,413  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@43c00e13] of Hibernate SessionFactory for HibernateTransactionManager
+09:50:01,507 DEBUG SQL:109 - select this_.id_utilisateur as id_utili2_4_0_, this_1_.mail as mail3_4_0_, this_1_.mot_de_passe as mot_de_p4_4_0_, this_1_.nom as nom5_4_0_, this_1_.prenom as prenom6_4_0_ from Client this_ inner join utilisateur this_1_ on this_.id_utilisateur=this_1_.id_utilisateur
+09:50:01,569  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a669e59: startup date [Mon Apr 04 09:50:01 CEST 2016]; root of context hierarchy
+09:50:01,569  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+09:50:01,679  INFO Configuration:2111 - HHH000044: Configuring from URL: file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Data/target/classes/hibernate.cfg.xml
+09:50:01,679  WARN DTDEntityResolver:75 - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+09:50:01,679  INFO Configuration:2216 - HHH000041: Configured SessionFactory: null
+09:50:01,897  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+09:50:01,897  INFO LobCreatorBuilder:123 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+09:50:01,897  WARN AnnotationBinder:910 - HHH000457: Joined inheritance hierarchy [fr.afcepf.atod26.java.spring.banque.entity.Utilisateur] defined explicit @DiscriminatorColumn.  Legacy Hibernate behavior was to ignore the @DiscriminatorColumn.  However, as part of issue HHH-6911 we now apply the explicit @DiscriminatorColumn.  If you would prefer the legacy behavior, enable the `hibernate.discriminator.ignore_explicit_for_joined` setting (hibernate.discriminator.ignore_explicit_for_joined=true)
+09:50:01,913  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+09:50:01,913  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+09:50:01,959  INFO SchemaValidator:157 - HHH000229: Running schema validator
+09:50:01,959  INFO SchemaValidator:165 - HHH000102: Fetching database metadata
+09:50:01,959  INFO TableMetadata:66 - HHH000261: Table found: public.client
+09:50:01,959  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:50:01,975  INFO TableMetadata:66 - HHH000261: Table found: public.conseiller
+09:50:01,975  INFO TableMetadata:67 - HHH000037: Columns: [id_utilisateur]
+09:50:01,975  INFO TableMetadata:66 - HHH000261: Table found: public.compte
+09:50:01,975  INFO TableMetadata:67 - HHH000037: Columns: [type_de_compte, id_utilisateur, numero_compte, date_de_creation]
+09:50:01,975  INFO TableMetadata:66 - HHH000261: Table found: public.operation_compte
+09:50:01,975  INFO TableMetadata:67 - HHH000037: Columns: [numero_operation, montant, type_operation, date_operation, lesoperation]
+09:50:01,991  INFO TableMetadata:66 - HHH000261: Table found: public.utilisateur
+09:50:01,991  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
+09:50:02,006  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@59615389] of Hibernate SessionFactory for HibernateTransactionManager
+09:50:02,147 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?

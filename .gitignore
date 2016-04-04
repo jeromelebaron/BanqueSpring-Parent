@@ -1,0 +1,7 @@
+*.project
+*.classpath
+*.prefs
+BanqueSpring-Business/.settings/
+BanqueSpring-Data/.settings/
+BanqueSpring-Entity/.settings/
+BanqueSpring-Web/.settings/
