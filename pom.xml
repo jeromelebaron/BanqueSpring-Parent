@@ -27,6 +27,11 @@
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>BanqueSpring-DataInterface</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>BanqueSpring-Data</artifactId>
 				<version>${project.version}</version>
@@ -36,6 +41,11 @@
 				<artifactId>BanqueSpring-Business</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>BanqueSpring-BusinessInterface</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>BanqueSpring-Web</artifactId>
