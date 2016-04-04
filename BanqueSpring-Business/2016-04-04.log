@@ -48,3 +48,9 @@
 11:17:51,560  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3a3e8692: startup date [Mon Apr 04 11:17:51 CEST 2016]; root of context hierarchy
 11:17:51,607  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
 11:17:51,841  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/D:/Tools-dev/Projet-Test/BanqueSpring/BanqueSpring-Business/target/classes/./BanqueSpring-Data/target/classes/spring-data.xml]
+11:42:32,790  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ef4f91d: startup date [Mon Apr 04 11:42:32 CEST 2016]; root of context hierarchy
+11:42:32,841  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
+11:42:33,067  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+11:53:54,218  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ef4f91d: startup date [Mon Apr 04 11:53:54 CEST 2016]; root of context hierarchy
+11:53:54,265  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
+11:53:54,483  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
