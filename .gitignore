@@ -1,0 +1,12 @@
+BanqueSpring-Web/target/
+*.classpath
+*.project
+BanqueSpring-Business/.settings/
+BanqueSpring-Business/target/
+BanqueSpring-BusinessInterface/.settings/
+BanqueSpring-Data/.settings/
+BanqueSpring-DataInterface/.settings/
+BanqueSpring-Entity/.settings/
+BanqueSpring-Entity/target/
+BanqueSpring-Web/.settings/
+.settings/
