@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 10:03:30,551  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@43e09e6a: startup date [Sun Apr 03 10:03:30 CEST 2016]; root of context hierarchy
 10:03:30,620  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-business.xml]
 10:03:30,977  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
@@ -26,3 +27,8 @@
 10:03:33,437  INFO TableMetadata:67 - HHH000037: Columns: [prenom, mail, id_utilisateur, mot_de_passe, type_utilisateur, nom]
 10:03:33,590  INFO HibernateTransactionManager:341 - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@409615d] of Hibernate SessionFactory for HibernateTransactionManager
 10:03:33,862 DEBUG SQL:109 - select utilisateu0_.id_utilisateur as id_utili2_4_, utilisateu0_.mail as mail3_4_, utilisateu0_.mot_de_passe as mot_de_p4_4_, utilisateu0_.nom as nom5_4_, utilisateu0_.prenom as prenom6_4_, utilisateu0_.type_utilisateur as type_uti1_4_ from utilisateur utilisateu0_ left outer join Client utilisateu0_1_ on utilisateu0_.id_utilisateur=utilisateu0_1_.id_utilisateur left outer join Conseiller utilisateu0_2_ on utilisateu0_.id_utilisateur=utilisateu0_2_.id_utilisateur where utilisateu0_.mail=? and utilisateu0_.mot_de_passe=?
+=======
+10:06:39,468  INFO ClassPathXmlApplicationContext:513 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4ea10ca8: startup date [Sun Apr 03 10:06:39 CEST 2016]; root of context hierarchy
+10:06:39,530  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from URL [file:/Users/Jerome/Documents/AFCEPF/Atod26/Spring-Banque/Sources/BanqueSpring-Business/target/classes/spring-business.xml]
+10:06:39,855  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-data.xml]
+>>>>>>> c4249663550232241af41f271a544f3eeb31af52
