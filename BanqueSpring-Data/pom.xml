@@ -32,6 +32,10 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
@@ -71,6 +75,12 @@
 			<id>afcepf</id>
 			<properties>
 				<env>afcepf</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>netapsys</id>
+			<properties>
+				<env>netapsys</env>
 			</properties>
 		</profile>
 	</profiles>
