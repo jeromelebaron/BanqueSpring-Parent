@@ -82,16 +82,19 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
 				<version>4.0.1.RELEASE</version>
+				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
 				<version>4.0.1.RELEASE</version>
+				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
 				<version>4.0.1.RELEASE</version>
+				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -125,6 +128,7 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
 				<version>4.0.1.RELEASE</version>
+				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tomcat</groupId>
