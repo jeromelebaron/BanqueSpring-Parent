@@ -1,14 +1,5 @@
-<<<<<<< HEAD
+
 *.project
-*.classpath
-*.prefs
-BanqueSpring-Business/.settings/
-BanqueSpring-Data/.settings/
-BanqueSpring-Entity/.settings/
-BanqueSpring-Web/.settings/
-BanqueSpring-BusinessInterface/.settings/
-BanqueSpring-DataInterface/.settings/
-=======
 BanqueSpring-Web/target/
 *.classpath
 *.project
@@ -21,4 +12,3 @@ BanqueSpring-Entity/.settings/
 BanqueSpring-Entity/target/
 BanqueSpring-Web/.settings/
 .settings/
->>>>>>> c4249663550232241af41f271a544f3eeb31af52
