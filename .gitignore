@@ -1,14 +1,26 @@
+<<<<<<< HEAD
 
 *.project
 BanqueSpring-Web/target/
+=======
+>>>>>>> a95e92e026a579bbc07c63d490456e2b42e93ef0
 *.classpath
 *.project
 BanqueSpring-Business/.settings/
 BanqueSpring-Business/target/
 BanqueSpring-BusinessInterface/.settings/
 BanqueSpring-Data/.settings/
+<<<<<<< HEAD
+=======
+BanqueSpring-Data/target/
+*.prefs
+>>>>>>> a95e92e026a579bbc07c63d490456e2b42e93ef0
 BanqueSpring-DataInterface/.settings/
 BanqueSpring-Entity/.settings/
 BanqueSpring-Entity/target/
 BanqueSpring-Web/.settings/
+<<<<<<< HEAD
 .settings/
+=======
+BanqueSpring-Web/target/
+>>>>>>> a95e92e026a579bbc07c63d490456e2b42e93ef0
