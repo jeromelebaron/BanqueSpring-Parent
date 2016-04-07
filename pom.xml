@@ -17,6 +17,16 @@
 
 	<properties>
 		<hibernate.version>4.3.8.Final</hibernate.version>
+		<log4j.version>1.2.16</log4j.version>
+		<log4jextras.version>1.0</log4jextras.version>
+		<mysqlconnector.version>5.1.31</mysqlconnector.version>
+		<postgresqlconnector.version>9.2-1004-jdbc4</postgresqlconnector.version>
+		<spring.version>4.0.1.RELEASE</spring.version>
+		<jsf.version>2.1.8</jsf.version>
+		<servletapi.version>2.5</servletapi.version>
+		<junit.version>4.12</junit.version>
+		<elapi.version>6.0.32</elapi.version>
+		<commonsdbcp2.version>2.0</commonsdbcp2.version>
 	</properties>
 
 	<dependencyManagement>
@@ -59,81 +69,81 @@
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
-				<version>1.2.16</version>
+				<version>${log4j.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>apache-log4j-extras</artifactId>
-				<version>1.0</version>
+				<version>${log4jextras.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
-				<version>5.1.31</version>
+				<version>${mysqlconnector.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
-				<version>9.2-1004-jdbc4</version>
+				<version>${postgresqlconnector.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
-				<version>4.0.1.RELEASE</version>
+				<version>${spring.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
-				<version>4.0.1.RELEASE</version>
+				<version>${spring.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
-				<version>4.0.1.RELEASE</version>
+				<version>${spring.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-dbcp2</artifactId>
-				<version>2.0</version>
+				<version>${commonsdbcp2.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>4.12</version>
+				<version>${junit.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
-				<version>2.5</version>
+				<version>${servletapi.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.sun.faces</groupId>
 				<artifactId>jsf-api</artifactId>
-				<version>2.1.8</version>
+				<version>${jsf.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.sun.faces</groupId>
 				<artifactId>jsf-impl</artifactId>
-				<version>2.1.8</version>
+				<version>${jsf.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
-				<version>4.0.1.RELEASE</version>
+				<version>${spring.version}</version>
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tomcat</groupId>
 				<artifactId>el-api</artifactId>
-				<version>6.0.32</version>
+				<version>${elapi.version}</version>
 				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>
