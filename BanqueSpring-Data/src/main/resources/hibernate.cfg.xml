@@ -5,7 +5,7 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.dialect" >${db.dialect}</property>
-		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<property name="hibernate.hbm2ddl.auto">${db.hbm2ddl.auto}</property>
 		<mapping class="fr.afcepf.atod26.java.spring.banque.entity.Client" />
 		<mapping class="fr.afcepf.atod26.java.spring.banque.entity.Compte" />
 		<mapping class="fr.afcepf.atod26.java.spring.banque.entity.Conseiller" />
