@@ -6,10 +6,11 @@ package fr.afcepf.atod26.java.spring.banque.impl;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import fr.afcepf.atod26.java.spring.banque.api.IDaoCompte;
 import fr.afcepf.atod26.java.spring.banque.entity.Client;
@@ -18,16 +19,12 @@ import fr.afcepf.atod26.java.spring.banque.entity.Compte;
 /**
  * @author Jerome
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:spring-data.xml")
 public class DaoSQLCompteTest {
 
+    @Autowired
     private IDaoCompte  daoCompte;
-    private BeanFactory bf;
-
-    @Before
-    public void init() {
-        bf = new ClassPathXmlApplicationContext("classpath:spring-data.xml");
-        daoCompte = bf.getBean(IDaoCompte.class);
-    }
 
     /**
      * Test method for
