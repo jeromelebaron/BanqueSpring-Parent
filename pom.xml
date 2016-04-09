@@ -37,10 +37,10 @@
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>BanqueSpring-DataInterface</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>BanqueSpring-DataInterface</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>BanqueSpring-Data</artifactId>
@@ -52,10 +52,10 @@
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>BanqueSpring-BusinessInterface</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>BanqueSpring-BusinessInterface</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>BanqueSpring-Web</artifactId>
@@ -161,6 +161,18 @@
 					</source>
 					<target>1.7</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
