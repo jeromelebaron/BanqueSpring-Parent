@@ -3,8 +3,6 @@
  */
 package fr.afcepf.atod26.java.spring.banque.impl;
 
-import static org.junit.Assert.fail;
-
 import java.util.List;
 
 import org.junit.Assert;

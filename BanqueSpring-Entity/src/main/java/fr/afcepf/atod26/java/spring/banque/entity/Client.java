@@ -1,7 +1,6 @@
 package fr.afcepf.atod26.java.spring.banque.entity;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -26,11 +25,11 @@ public class Client extends Utilisateur {
 
     /**
      * Constructeur plein.
-     * @param paramIdUtilisateur
-     * @param paramNom
-     * @param paramPrenom
-     * @param paramMail
-     * @param paramMotDePasse
+     * @param paramIdUtilisateur l'id de l'utilisateur.
+     * @param paramNom le nom de l'utilisateur.
+     * @param paramPrenom le prenom de l'utilisateur.
+     * @param paramMail le mail de l'utilisateur
+     * @param paramMotDePasse le mot de passe de l'utilisateur.
      */
     public Client(final Integer paramIdUtilisateur, final String paramNom, final String paramPrenom, final String paramMail,
             final String paramMotDePasse) {
@@ -39,10 +38,10 @@ public class Client extends Utilisateur {
 
     /**
      * Constructeur sans id.
-     * @param paramNom
-     * @param paramPrenom
-     * @param paramMail
-     * @param paramMotDePasse
+     * @param paramNom le nom de l'utilisateur.
+     * @param paramPrenom le prenom de l'utilisateur.
+     * @param paramMail le mail de l'utilisateur
+     * @param paramMotDePasse le mot de passe de l'utilisateur.
      */
     public Client(final String paramNom, final String paramPrenom, final String paramMail, final String paramMotDePasse) {
         super(paramNom, paramPrenom, paramMail, paramMotDePasse);
