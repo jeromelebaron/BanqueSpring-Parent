@@ -1,5 +1,6 @@
 package fr.afcepf.atod26.java.spring.banque.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.DiscriminatorValue;
@@ -14,7 +15,7 @@ public class Client extends Utilisateur {
      * Tous les {@link Compte} du client.
      */
     @OneToMany(mappedBy = "client")
-    private Set<Compte> lesCompte;
+    private List<Compte> lesCompte;
 
     /**
      * Constructeur vide.
@@ -47,11 +48,11 @@ public class Client extends Utilisateur {
         super(paramNom, paramPrenom, paramMail, paramMotDePasse);
     }
 
-    public Set<Compte> getLesCompte() {
+    public List<Compte> getLesCompte() {
         return lesCompte;
     }
 
-    public void setLesCompte(final Set<Compte> paramLesCompte) {
+    public void setLesCompte(final List<Compte> paramLesCompte) {
         lesCompte = paramLesCompte;
     }
 
