@@ -1,7 +1,7 @@
 package fr.afcepf.atod26.java.spring.banque.entity;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,16 +34,19 @@ public class Compte {
      */
     @Column(name = "type_de_compte", length = 45, nullable = false)
     private String               typeDeCompte;
+
     /**
      * La date de création du compte.
      */
     @Column(name = "date_de_creation", nullable = false)
     private Date                 dateDeCreation;
+
     /**
      * La liste des {@link OperationCompte} liées à ce compte
      */
     @OneToMany(mappedBy = "compte")
-    private Set<OperationCompte> lesOperation;
+    private List<OperationCompte> lesOperation;
+
     /**
      * Le {@link Client} à qui appartient le compte.
      */
@@ -55,6 +58,21 @@ public class Compte {
      * Constructeur vide.
      */
     public Compte() {
+        //Empty
+    }
+
+    /**
+     * Constructeur sans id ni opérations.
+     * @param paramTypeDeCompte
+     * @param paramDateDeCreation
+     * @param paramLesOperation
+     * @param paramClient
+     */
+    public Compte(String paramTypeDeCompte, Date paramDateDeCreation, Client paramClient) {
+        super();
+        typeDeCompte = paramTypeDeCompte;
+        dateDeCreation = paramDateDeCreation;
+        client = paramClient;
     }
 
     /**
@@ -66,11 +84,8 @@ public class Compte {
      * @param paramClient
      */
     public Compte(final Integer paramNumero, final String paramTypeDeCompte, final Date paramDateDeCreation, final Client paramClient) {
-        super();
+        this(paramTypeDeCompte, paramDateDeCreation, paramClient);
         numeroCompte = paramNumero;
-        typeDeCompte = paramTypeDeCompte;
-        dateDeCreation = paramDateDeCreation;
-        client = paramClient;
     }
 
     public Integer getNumeroCompte() {
@@ -97,11 +112,11 @@ public class Compte {
         dateDeCreation = paramDateDeCreation;
     }
 
-    public Set<OperationCompte> getLesOperation() {
+    public List<OperationCompte> getLesOperation() {
         return lesOperation;
     }
 
-    public void setLesOperation(final Set<OperationCompte> paramLesOperation) {
+    public void setLesOperation(final List<OperationCompte> paramLesOperation) {
         lesOperation = paramLesOperation;
     }
 

@@ -26,7 +26,7 @@ public class OperationCompte {
      * Le {@link Compte} auquel est liée l'opération.
      */
     @ManyToOne
-    @JoinColumn(name = "lesOperation", nullable = false)
+    @JoinColumn(name = "compte", nullable = false)
     private Compte  compte;
     /**
      * Le numéro de l'opération

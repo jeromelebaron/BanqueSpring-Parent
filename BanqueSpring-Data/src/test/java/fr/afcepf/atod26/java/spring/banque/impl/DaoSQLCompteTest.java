@@ -3,6 +3,7 @@
  */
 package fr.afcepf.atod26.java.spring.banque.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
@@ -60,6 +61,17 @@ public class DaoSQLCompteTest {
         int tailleListeCompteAttendu = 2;
 
         Assert.assertEquals("Vérification du nombre de compte pour ce client", tailleListeCompteAttendu, tailleListeComptesTrouves);
+    }
+    
+    @Test
+    public void testDInsertCompte(){
+        Compte nouveauCompte = new Compte("LDD", new Date(), new Client(1, null, null, null, null));
+        daoCompte.insertCompte(nouveauCompte);
+        int idNouveauCompteGenere = nouveauCompte.getNumeroCompte();
+        
+        int idNouveauCompteAttendu = 11;
+        
+        Assert.assertEquals("Vérification de l'insertion du nouveau compte", idNouveauCompteAttendu, idNouveauCompteGenere);
     }
 
 }
